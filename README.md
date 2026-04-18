@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 HireFlow | Next.js Application for AI & Automation Specialist
 
-## Getting Started
+<div align="center">
+  <img width="300" alt="HireFlow Logo" 
+       src="https://via.placeholder.com/300x100?text=HireFlow">
+  <h1>HireFlow Application Portal</h1>
+  <p>Streamline your application process with smart validation and instant feedback</p>
+</div>
 
-First, run the development server:
+## ✨ Getting Started
 
+### 🌐 Prerequisites
+- Node.js 18+  
+- Git installed
+
+### 🛠️ Installation
 ```bash
-npm run dev
+npm install
 # or
-yarn dev
+yarn install
 # or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔥 Launch the Portal
+```bash
+npm run dev
+# Visit http://localhost:3000
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌍 Smart Application Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Feature               | Description |
+|-----------------------|-------------|
+| 📱 Country-Specific Input | Auto-adjusted phone number validation per region |
+| 📄 Document Support   | PDF (max 5MB) or Image (max 1MB) uploads |
+| ✅ Real-Time Validation | Immediate feedback on form submission |
+| 🎉 Success Celebration | Animated confetti on successful apply |
 
-## Learn More
+## 🎨 Technical Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js** with App Router
+- **React** 18+
+- **TypeScript** typesafe forms
+- **SplineScene** 3D animations
+- **Canvas-confetti** for success effects
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Deployment Options
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[![Deploy on Vercel](https://vercel.com/docs/images/badges/deploy-on-vercel.svg)](https://vercel.com/new)
 
-## Deploy on Vercel
+## 📚 Documentation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js Official Docs](https://nextjs.org/docs)
+- [Learn Next.js Tutorial](https://nextjs.org/learn)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤖 Customization Options
+
+### 🎨 Branding Customization
+- Update colors in `app/globals.css`
+- Modify logo assets in `/public`
+
+### 🤖 AI Integration
+- Add AI resume analysis with `/api/resume-analyze`
+- Implement NLP classification for applications
+
+## 🛠️ Troubleshooting
+
+```bash
+# Build project
+npm run build
+
+# Reset cache
+npm run dev -- --force
+
+# For OCR issues
+npm install pdfjs-dist
+```
+
+> 💡 **Pro Tip**: Use environment variables in `.env.local` for custom validation rules
