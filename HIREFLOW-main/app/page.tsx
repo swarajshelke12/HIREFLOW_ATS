@@ -135,13 +135,13 @@ export default function CandidatePortal() {
       formData.append("email", email);
       formData.append("resume", file);
 
-      const response = await fetch("http://localhost:5678/webhook-test/hireflow-apply", {
+      const response = await fetch("http://localhost:5678/webhook/hireflow-apply", {
          method: "POST",
          body: formData,
       });
 
       if (!response.ok) {
-        throw new Error("Response not OK<n8n might be down.>");
+        throw new Error("Failed to send to n8n");
       }
 
       setIsSubmitted(true);
@@ -216,7 +216,7 @@ export default function CandidatePortal() {
             <h1 className="text-4xl font-black tracking-tight uppercase text-center">
               Hire<span className="text-blue-500">Flow</span>
             </h1>
-            <p className="text-white-500 font-medium text-center">For "AI & Automation specialist - Learning & Design team" role give your details here!</p>
+            <p className="text-gray-400 font-medium text-center">For "AI & Automation specialist - Learning & Design team" role give your details here!</p>
           </CardHeader>
           
           <CardContent>
@@ -284,7 +284,7 @@ export default function CandidatePortal() {
                 </label>
                 <input 
                   type="email" 
-                  placeholder="you@example.com"
+                  placeholder="you@gmail.com"
                   className="w-full p-4 rounded-xl bg-black/50 border border-white/10 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-white placeholder:text-gray-600"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
