@@ -1,17 +1,58 @@
-# 🚀 HireFlow | Next.js Application for AI & Automation Specialist
+# 🚀 HireFlow: AI-Powered Applicant Tracking System (ATS)
 
 <div align="center">
   <img width="300" alt="HireFlow Logo" 
        src="https://via.placeholder.com/300x100?text=HireFlow">
   <h1>HireFlow Application Portal</h1>
-  <p>Streamline your application process with smart validation and instant feedback</p>
+  <p>Streamline your application process with smart validation, 3D experiences, and instant AI feedback</p>
 </div>
+
+**HireFlow** is an intelligent recruitment automation platform designed to eliminate manual resume screening. It uses Large Language Models (LLMs) and Optical Character Recognition (OCR) to analyze resumes, score candidates based on semantic fit, and automate communication.
+
+## 🌟 Key Features
+
+- **3D Interactive Portal:** A visually stunning candidate application portal built with **Next.js 14** and **Spline 3D**.
+- **Universal Resume Parsing:** Automatically extracts text from **PDFs** and **Scanned Images** using specialized AI agents.
+- **Contextual AI Scoring:** Evaluates candidates on "Transferable Skills" and "Potential" (0-100 Score) using **Google Gemini** & **Groq (Llama 3)**.
+- **Automated Feedback Loop:** Sends personalized, constructive rejection emails citing specific technical gaps for candidates scoring <45.
+- **Human-in-the-Loop:** Integrated "Wait for Approval" workflow ensures HR validates critical decisions before emails are sent.
+- **Smart Validation:** Dynamic country-specific phone number validation, document support, and immediate feedback.
+- **Success Celebration:** Animated confetti on successful application submission.
+
+## 🛠️ Tech Stack
+
+### **Frontend (The Experience)**
+- **Framework:** Next.js 14 (React / App Router)
+- **Styling:** Tailwind CSS
+- **Language:** TypeScript
+- **3D Effects:** Spline 3D (`@splinetool/react-spline`)
+- **Animations:** Framer Motion & Canvas-confetti
+
+### **Backend & AI (The Brains)**
+- **Orchestration:** n8n (Workflow Automation)
+- **AI Models:** Google Gemini 1.5 Pro (Vision) & Llama 3 (via Groq)
+- **Database:** Google Sheets (Real-time Data Sync)
+- **Communication:** Gmail SMTP Server
+
+## ⚙️ System Architecture
+
+1. **Candidate Portal:** User uploads resume (Drag & Drop) via the Next.js frontend.
+2. **Secure Webhook:** Data is sent to the private n8n webhook (`/webhook-test/hireflow-apply`).
+3. **Router:** Workflow splits based on file type (PDF vs. Image).
+4. **AI Analysis:**
+   - **OCR Agent:** Extracts text from images.
+   - **Analysis Agent:** Evaluates text against the "Talent Scout" system prompt.
+5. **Decision Engine:**
+   - Score > 80: Mark for Interview.
+   - Score < 45: Draft Rejection Email.
+6. **Output:** Data saved to Sheets; Email sent upon Human Approval.
 
 ## ✨ Getting Started
 
 ### 🌐 Prerequisites
 - Node.js 18+  
 - Git installed
+- n8n instance active for webhooks
 
 ### 🛠️ Installation
 ```bash
@@ -28,31 +69,9 @@ npm run dev
 # Visit http://localhost:3000
 ```
 
-## 🌍 Smart Application Features
-
-| Feature               | Description |
-|-----------------------|-------------|
-| 📱 Country-Specific Input | Auto-adjusted phone number validation per region |
-| 📄 Document Support   | PDF (max 5MB) or Image (max 1MB) uploads |
-| ✅ Real-Time Validation | Immediate feedback on form submission |
-| 🎉 Success Celebration | Animated confetti on successful apply |
-
-## 🎨 Technical Stack
-
-- **Next.js** with App Router
-- **React** 18+
-- **TypeScript** typesafe forms
-- **SplineScene** 3D animations
-- **Canvas-confetti** for success effects
-
 ## 🚀 Deployment Options
 
 [![Deploy on Vercel](https://vercel.com/docs/images/badges/deploy-on-vercel.svg)](https://vercel.com/new)
-
-## 📚 Documentation
-
-- [Next.js Official Docs](https://nextjs.org/docs)
-- [Learn Next.js Tutorial](https://nextjs.org/learn)
 
 ## 🤖 Customization Options
 
@@ -61,8 +80,8 @@ npm run dev
 - Modify logo assets in `/public`
 
 ### 🤖 AI Integration
-- Add AI resume analysis with `/api/resume-analyze`
 - Implement NLP classification for applications
+- Update AI logic within the n8n webhook workflow
 
 ## 🛠️ Troubleshooting
 

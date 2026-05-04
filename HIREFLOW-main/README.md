@@ -1,25 +1,32 @@
 # 🚀 HireFlow: AI-Powered Applicant Tracking System (ATS)
 
+<div align="center">
+  <img width="300" alt="HireFlow Logo" 
+       src="https://via.placeholder.com/300x100?text=HireFlow">
+  <h1>HireFlow Application Portal</h1>
+  <p>Streamline your application process with smart validation, 3D experiences, and instant AI feedback</p>
+</div>
+
 **HireFlow** is an intelligent recruitment automation platform designed to eliminate manual resume screening. It uses Large Language Models (LLMs) and Optical Character Recognition (OCR) to analyze resumes, score candidates based on semantic fit, and automate communication.
 
-![HireFlow Dashboard](https://via.placeholder.com/800x400?text=HireFlow+Dashboard+Screenshot)
-*(Note: Upload a screenshot of your 3D Robot Interface here later!)*
-
 ## 🌟 Key Features
+
 - **3D Interactive Portal:** A visually stunning candidate application portal built with **Next.js 14** and **Spline 3D**.
 - **Universal Resume Parsing:** Automatically extracts text from **PDFs** and **Scanned Images** using specialized AI agents.
 - **Contextual AI Scoring:** Evaluates candidates on "Transferable Skills" and "Potential" (0-100 Score) using **Google Gemini** & **Groq (Llama 3)**.
 - **Automated Feedback Loop:** Sends personalized, constructive rejection emails citing specific technical gaps for candidates scoring <45.
 - **Human-in-the-Loop:** Integrated "Wait for Approval" workflow ensures HR validates critical decisions before emails are sent.
+- **Smart Validation:** Dynamic country-specific phone number validation, document support, and immediate feedback.
+- **Success Celebration:** Animated confetti on successful application submission.
 
 ## 🛠️ Tech Stack
 
 ### **Frontend (The Experience)**
-- **Framework:** Next.js 14 (React)
+- **Framework:** Next.js 14 (React / App Router)
 - **Styling:** Tailwind CSS
 - **Language:** TypeScript
 - **3D Effects:** Spline 3D (`@splinetool/react-spline`)
-- **Animations:** Framer Motion
+- **Animations:** Framer Motion & Canvas-confetti
 
 ### **Backend & AI (The Brains)**
 - **Orchestration:** n8n (Workflow Automation)
@@ -28,8 +35,9 @@
 - **Communication:** Gmail SMTP Server
 
 ## ⚙️ System Architecture
+
 1. **Candidate Portal:** User uploads resume (Drag & Drop) via the Next.js frontend.
-2. **Secure Webhook:** Data is sent to the private n8n webhook.
+2. **Secure Webhook:** Data is sent to the private n8n webhook (`/webhook-test/hireflow-apply`).
 3. **Router:** Workflow splits based on file type (PDF vs. Image).
 4. **AI Analysis:**
    - **OCR Agent:** Extracts text from images.
@@ -38,3 +46,54 @@
    - Score > 80: Mark for Interview.
    - Score < 45: Draft Rejection Email.
 6. **Output:** Data saved to Sheets; Email sent upon Human Approval.
+
+## ✨ Getting Started
+
+### 🌐 Prerequisites
+- Node.js 18+  
+- Git installed
+- n8n instance active for webhooks
+
+### 🛠️ Installation
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+### 🔥 Launch the Portal
+```bash
+npm run dev
+# Visit http://localhost:3000
+```
+
+## 🚀 Deployment Options
+
+[![Deploy on Vercel](https://vercel.com/docs/images/badges/deploy-on-vercel.svg)](https://vercel.com/new)
+
+## 🤖 Customization Options
+
+### 🎨 Branding Customization
+- Update colors in `app/globals.css`
+- Modify logo assets in `/public`
+
+### 🤖 AI Integration
+- Implement NLP classification for applications
+- Update AI logic within the n8n webhook workflow
+
+## 🛠️ Troubleshooting
+
+```bash
+# Build project
+npm run build
+
+# Reset cache
+npm run dev -- --force
+
+# For OCR issues
+npm install pdfjs-dist
+```
+
+> 💡 **Pro Tip**: Use environment variables in `.env.local` for custom validation rules
