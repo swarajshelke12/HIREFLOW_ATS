@@ -1,12 +1,5 @@
 # 🚀 HireFlow: AI-Powered Applicant Tracking System (ATS)
 
-<div align="center">
-  <img width="300" alt="HireFlow Logo" 
-       src="https://via.placeholder.com/300x100?text=HireFlow">
-  <h1>HireFlow Application Portal</h1>
-  <p>Streamline your application process with smart validation, 3D experiences, and instant AI feedback</p>
-</div>
-
 **HireFlow** is an intelligent recruitment automation platform designed to eliminate manual resume screening. It uses Large Language Models (LLMs) and Optical Character Recognition (OCR) to analyze resumes, score candidates based on semantic fit, and automate communication.
 
 ## 🌟 Key Features
@@ -34,7 +27,7 @@
 - **Database:** Google Sheets (Real-time Data Sync)
 - **Communication:** Gmail SMTP Server
 
-## ⚙️ System Architecture
+## ⚙️ How It Works
 
 1. **Candidate Portal:** User uploads resume (Drag & Drop) via the Next.js frontend.
 2. **Secure Webhook:** Data is sent to the private n8n webhook (`/webhook-test/hireflow-apply`).
@@ -47,14 +40,14 @@
    - Score < 45: Draft Rejection Email.
 6. **Output:** Data saved to Sheets; Email sent upon Human Approval.
 
-## ✨ Getting Started
+## 🚀 Getting Started
 
-### 🌐 Prerequisites
-- Node.js 18+  
+### Prerequisites
+- Node.js 18+
 - Git installed
 - n8n instance active for webhooks
 
-### 🛠️ Installation
+### Installation
 ```bash
 npm install
 # or
@@ -63,23 +56,25 @@ yarn install
 pnpm install
 ```
 
-### 🔥 Launch the Portal
+### Launch the Portal
 ```bash
 npm run dev
 # Visit http://localhost:3000
 ```
 
-## 🚀 Deployment Options
+## 🌐 Deployment
 
-[![Deploy on Vercel](https://vercel.com/docs/images/badges/deploy-on-vercel.svg)](https://vercel.com/new)
+Deploy easily on Vercel:
 
-## 🤖 Customization Options
+[![Deploy on Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/hireflow)
 
-### 🎨 Branding Customization
+## 🤖 Customization
+
+### Branding
 - Update colors in `app/globals.css`
 - Modify logo assets in `/public`
 
-### 🤖 AI Integration
+### AI Integration
 - Implement NLP classification for applications
 - Update AI logic within the n8n webhook workflow
 
@@ -97,3 +92,13 @@ npm install pdfjs-dist
 ```
 
 > 💡 **Pro Tip**: Use environment variables in `.env.local` for custom validation rules
+
+## 📝 License
+
+This project is open-source. Feel free to fork and customize for your recruitment needs.
+
+---
+
+<div align="center">
+  <p>Built with ❤️ for smarter hiring</p>
+</div>
