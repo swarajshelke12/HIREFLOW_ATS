@@ -8,11 +8,8 @@ import confetti from "canvas-confetti";
 // 1. Defined strict rules for each country
 const COUNTRY_CONFIG = [
   { code: "+91", label: "IN (+91)", maxLength: 10, placeholder: "98765 43210" },
-  { code: "+1", label: "US/CA (+1)", maxLength: 10, placeholder: "201 555 0123" },
   { code: "+971", label: "UAE (+971)", maxLength: 9, placeholder: "50 123 4567" },
   { code: "+81", label: "JP (+81)", maxLength: 10, placeholder: "90 1234 5678" },
-  { code: "+55", label: "BR (+55)", maxLength: 11, placeholder: "11 98765 4321" },
-  { code: "+64", label: "NZ (+64)", maxLength: 9, placeholder: "21 123 4567" },
   { code: "+34", label: "ES (+34)", maxLength: 9, placeholder: "612 345 678" },
   { code: "+39", label: "IT (+39)", maxLength: 10, placeholder: "312 345 6789" },
   { code: "+353", label: "IE (+353)", maxLength: 9, placeholder: "83 123 4567" },
