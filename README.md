@@ -80,7 +80,7 @@
 
 <div align="center">
 
-## ⚡ The Vision
+## ⚡ The Vision feature of AI
 
 <br>
 
@@ -88,7 +88,7 @@
 <tr>
 <td width="600">
 
-> *"The best hire you'll ever make is the one you almost missed."*
+> _"The best hire you'll ever make is the one you almost missed."_
 
 <br>
 
@@ -140,7 +140,7 @@ Built with a cinematic **3D interactive portal**, powered by **dual-LLM orchestr
 
 ### 🌌 3D Immersive Portal
 
-A jaw-dropping candidate experience built with **Spline 3D**, **Framer Motion**, and cinematic lighting. Not a form — an *experience*.
+A jaw-dropping candidate experience built with **Spline 3D**, **Framer Motion**, and cinematic lighting. Not a form — an _experience_.
 
 <br>
 
@@ -599,11 +599,11 @@ The extracted text is evaluated against a meticulously crafted **"Talent Scout" 
 
 The score triggers deterministic actions:
 
-| Score | Action | Status |
-|:---:|:---|:---:|
-| `> 80` | Marked for interview — fast-tracked | 🟢 |
-| `45 - 80` | Held for manual HR review | 🟡 |
-| `< 45` | Constructive rejection email drafted | 🔴 |
+|   Score   | Action                               | Status |
+| :-------: | :----------------------------------- | :----: |
+|  `> 80`   | Marked for interview — fast-tracked  |   🟢   |
+| `45 - 80` | Held for manual HR review            |   🟡   |
+|  `< 45`   | Constructive rejection email drafted |   🔴   |
 
 </td>
 </tr>
@@ -805,12 +805,12 @@ The **"Talent Scout" system prompt** instructs the LLM to act as a senior recrui
 
 **Score Ranges:**
 
-| Range | Label | Action |
-|:---:|:---:|:---|
+| Range  |     Label      | Action                         |
+| :----: | :------------: | :----------------------------- |
 | 80-100 | 🏆 Exceptional | Immediate interview fast-track |
-| 60-79 | ⭐ Strong | Flagged for priority review |
-| 45-59 | 💡 Promising | Manual HR evaluation required |
-| 0-44 | 📝 Below Bar | Constructive feedback email |
+| 60-79  |   ⭐ Strong    | Flagged for priority review    |
+| 45-59  |  💡 Promising  | Manual HR evaluation required  |
+|  0-44  |  📝 Below Bar  | Constructive feedback email    |
 
 </details>
 
@@ -825,18 +825,19 @@ HireFlow implements **country-aware phone validation** supporting 8+ regions wit
 
 ```typescript
 const COUNTRY_CONFIG = [
-  { code: "+91",  label: "IN (+91)",   maxLength: 10 },  // India
-  { code: "+1",   label: "US/CA (+1)", maxLength: 10 },  // North America
-  { code: "+44",  label: "UK (+44)",   maxLength: 10 },  // United Kingdom
-  { code: "+61",  label: "AU (+61)",   maxLength: 9  },  // Australia
-  { code: "+971", label: "UAE (+971)", maxLength: 9  },  // UAE
-  { code: "+49",  label: "DE (+49)",   maxLength: 11 },  // Germany
-  { code: "+33",  label: "FR (+33)",   maxLength: 9  },  // France
-  { code: "+81",  label: "JP (+81)",   maxLength: 10 },  // Japan
+  { code: "+91", label: "IN (+91)", maxLength: 10 }, // India
+  { code: "+1", label: "US/CA (+1)", maxLength: 10 }, // North America
+  { code: "+44", label: "UK (+44)", maxLength: 10 }, // United Kingdom
+  { code: "+61", label: "AU (+61)", maxLength: 9 }, // Australia
+  { code: "+971", label: "UAE (+971)", maxLength: 9 }, // UAE
+  { code: "+49", label: "DE (+49)", maxLength: 11 }, // Germany
+  { code: "+33", label: "FR (+33)", maxLength: 9 }, // France
+  { code: "+81", label: "JP (+81)", maxLength: 10 }, // Japan
 ];
 ```
 
 The input dynamically adapts:
+
 - ✅ Placeholder text changes per country
 - ✅ Max digit limit enforced in real-time
 - ✅ Non-numeric characters blocked at input level
@@ -878,6 +879,7 @@ The input dynamically adapts:
 ```
 
 **Supported Formats:**
+
 - 📑 PDF documents (up to 5MB)
 - 🖼️ JPG/JPEG images (up to 1MB)
 - 🖼️ PNG images (up to 1MB)
@@ -894,14 +896,14 @@ The input dynamically adapts:
 
 The candidate portal isn't just a form — it's a **spatial experience**:
 
-| Element | Technology | Effect |
-|:---|:---|:---|
-| Background Scene | Spline 3D + WebGL | Living, interactive 3D environment |
-| Spotlight Effect | Custom SVG + CSS | Dynamic cursor-following light |
-| Card Design | CSS Backdrop Blur | Glassmorphic floating interface |
-| Submission | Canvas Confetti | GPU-accelerated particle celebration |
-| Transitions | Framer Motion | Physics-based spring animations |
-| Drag & Drop | React DnD Events | Glowing upload zone with haptic feedback |
+| Element          | Technology        | Effect                                   |
+| :--------------- | :---------------- | :--------------------------------------- |
+| Background Scene | Spline 3D + WebGL | Living, interactive 3D environment       |
+| Spotlight Effect | Custom SVG + CSS  | Dynamic cursor-following light           |
+| Card Design      | CSS Backdrop Blur | Glassmorphic floating interface          |
+| Submission       | Canvas Confetti   | GPU-accelerated particle celebration     |
+| Transitions      | Framer Motion     | Physics-based spring animations          |
+| Drag & Drop      | React DnD Events  | Glowing upload zone with haptic feedback |
 
 The Spline scene loads asynchronously and renders at **60fps** using hardware-accelerated WebGL, ensuring the 3D experience doesn't compromise form usability.
 
@@ -1009,12 +1011,12 @@ components/ui/spline.tsx # Spline scene URL
 
 <br>
 
-| Setting | Location | Description |
-|:---|:---|:---|
-| Score thresholds | n8n workflow | Adjust interview/rejection cutoffs |
-| System prompt | n8n AI node | Modify evaluation criteria |
-| LLM models | n8n credentials | Switch between Gemini/Groq variants |
-| Email templates | n8n email node | Customize feedback messaging |
+| Setting          | Location        | Description                         |
+| :--------------- | :-------------- | :---------------------------------- |
+| Score thresholds | n8n workflow    | Adjust interview/rejection cutoffs  |
+| System prompt    | n8n AI node     | Modify evaluation criteria          |
+| LLM models       | n8n credentials | Switch between Gemini/Groq variants |
+| Email templates  | n8n email node  | Customize feedback messaging        |
 
 </details>
 
@@ -1069,7 +1071,7 @@ npm install pdfjs-dist
 ```
    COMPLETED                     IN PROGRESS                    PLANNED
    ─────────                     ───────────                    ───────
-                                                                
+
    ✅ 3D Candidate Portal        🔄 Multi-role Support          📋 Dashboard Analytics
    ✅ Dual-LLM Scoring           🔄 PostgreSQL Migration        📋 Candidate CRM
    ✅ OCR Resume Parsing          🔄 Rate Limiting               📋 Interview Scheduler
@@ -1123,6 +1125,7 @@ git push origin feature/something-amazing
 ```
 
 **Guidelines:**
+
 - 🎯 Follow the existing code style (TypeScript strict mode)
 - 📝 Write meaningful commit messages
 - 🧪 Test your changes before submitting
@@ -1162,10 +1165,10 @@ git push origin feature/something-amazing
 
 <br><br>
 
-*"I believe technology should amplify human judgment, not replace it.*
-*HireFlow is my answer to a hiring world that's broken —*
-*where great talent gets filtered out by keyword-matching bots,*
-*and candidates are treated like tickets, not people."*
+_"I believe technology should amplify human judgment, not replace it._
+_HireFlow is my answer to a hiring world that's broken —_
+_where great talent gets filtered out by keyword-matching bots,_
+_and candidates are treated like tickets, not people."_
 
 <br>
 
@@ -1233,7 +1236,7 @@ See the [LICENSE](LICENSE) file for details.
 
 **If HireFlow resonated with you, leave a ⭐**
 
-*It means more than you think.*
+_It means more than you think._
 
 <br>
 
