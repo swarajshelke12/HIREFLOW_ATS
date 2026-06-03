@@ -21,6 +21,10 @@ const COUNTRY_CONFIG = [
   { code: "+966", label: "SA (+966)", maxLength: 9, placeholder: "50 123 4567" },
   { code: "+27", label: "ZA (+27)", maxLength: 9, placeholder: "82 123 4567" },
   { code: "+64", label: "NZ (+64)", maxLength: 9, placeholder: "21 123 4567" },
+  { code: "+34", label: "ES (+34)", maxLength: 9, placeholder: "612 345 678" },
+  { code: "+39", label: "IT (+39)", maxLength: 10, placeholder: "312 345 6789" },
+  { code: "+41", label: "CH (+41)", maxLength: 9, placeholder: "71 234 56 78" },
+  { code: "+353", label: "IE (+353)", maxLength: 9, placeholder: "83 123 4567" },
 ];
 
 export default function CandidatePortal() {
