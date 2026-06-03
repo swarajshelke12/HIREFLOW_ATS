@@ -19,6 +19,9 @@ const COUNTRY_CONFIG = [
   { code: "+86", label: "CN (+86)", maxLength: 11, placeholder: "139 1234 5678" },
   { code: "+31", label: "NL (+31)", maxLength: 9, placeholder: "6 12345678" },
   { code: "+49", label: "DE (+49)", maxLength: 11, placeholder: "151 23456789" },
+  { code: "+44", label: "UK (+44)", maxLength: 10, placeholder: "7700 900077" },
+  { code: "+358", label: "FI (+358)", maxLength: 10, placeholder: "40 123 4567" },
+  { code: "+44", label: "England (+44)", maxLength: 10, placeholder: "7700 900077" },
 ];
 
 export default function CandidatePortal() {
