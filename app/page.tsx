@@ -15,6 +15,12 @@ const COUNTRY_CONFIG = [
   { code: "+49", label: "DE (+49)", maxLength: 11, placeholder: "151 23456789" },
   { code: "+33", label: "FR (+33)", maxLength: 9, placeholder: "6 12 34 56 78" },
   { code: "+81", label: "JP (+81)", maxLength: 10, placeholder: "90 1234 5678" },
+  { code: "+65", label: "SG (+65)", maxLength: 8, placeholder: "8123 4567" },
+  { code: "+31", label: "NL (+31)", maxLength: 9, placeholder: "6 12345678" },
+  { code: "+55", label: "BR (+55)", maxLength: 11, placeholder: "11 98765 4321" },
+  { code: "+966", label: "SA (+966)", maxLength: 9, placeholder: "50 123 4567" },
+  { code: "+27", label: "ZA (+27)", maxLength: 9, placeholder: "82 123 4567" },
+  { code: "+64", label: "NZ (+64)", maxLength: 9, placeholder: "21 123 4567" },
 ];
 
 export default function CandidatePortal() {
