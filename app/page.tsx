@@ -9,22 +9,16 @@ import confetti from "canvas-confetti";
 const COUNTRY_CONFIG = [
   { code: "+91", label: "IN (+91)", maxLength: 10, placeholder: "98765 43210" },
   { code: "+1", label: "US/CA (+1)", maxLength: 10, placeholder: "201 555 0123" },
-  { code: "+44", label: "UK (+44)", maxLength: 10, placeholder: "7700 900077" },
-  { code: "+61", label: "AU (+61)", maxLength: 9, placeholder: "412 345 678" },
   { code: "+971", label: "UAE (+971)", maxLength: 9, placeholder: "50 123 4567" },
-  { code: "+49", label: "DE (+49)", maxLength: 11, placeholder: "151 23456789" },
-  { code: "+33", label: "FR (+33)", maxLength: 9, placeholder: "6 12 34 56 78" },
   { code: "+81", label: "JP (+81)", maxLength: 10, placeholder: "90 1234 5678" },
-  { code: "+65", label: "SG (+65)", maxLength: 8, placeholder: "8123 4567" },
-  { code: "+31", label: "NL (+31)", maxLength: 9, placeholder: "6 12345678" },
   { code: "+55", label: "BR (+55)", maxLength: 11, placeholder: "11 98765 4321" },
-  { code: "+966", label: "SA (+966)", maxLength: 9, placeholder: "50 123 4567" },
-  { code: "+27", label: "ZA (+27)", maxLength: 9, placeholder: "82 123 4567" },
   { code: "+64", label: "NZ (+64)", maxLength: 9, placeholder: "21 123 4567" },
   { code: "+34", label: "ES (+34)", maxLength: 9, placeholder: "612 345 678" },
   { code: "+39", label: "IT (+39)", maxLength: 10, placeholder: "312 345 6789" },
-  { code: "+41", label: "CH (+41)", maxLength: 9, placeholder: "71 234 56 78" },
   { code: "+353", label: "IE (+353)", maxLength: 9, placeholder: "83 123 4567" },
+  { code: "+86", label: "CN (+86)", maxLength: 11, placeholder: "139 1234 5678" },
+  { code: "+31", label: "NL (+31)", maxLength: 9, placeholder: "6 12345678" },
+  { code: "+49", label: "DE (+49)", maxLength: 11, placeholder: "151 23456789" },
 ];
 
 export default function CandidatePortal() {
