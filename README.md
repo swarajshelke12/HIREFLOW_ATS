@@ -42,15 +42,15 @@
 
 ```
  ╔══════════════════════════════════════════════════════════════════════════╗
- ║                                                                        ║
- ║   Every year, recruiters waste 23 hours screening a single role.       ║
- ║   Every year, qualified candidates get lost in the noise.              ║
- ║                                                                        ║
- ║   We didn't build a tool.                                              ║
- ║   We built a paradigm shift.                                           ║
- ║                                                                        ║
- ║   H I R E F L O W                                                     ║
- ║                                                                        ║
+ ║                                                                          ║
+ ║   Every year, recruiters waste hours screening a single role.            ║
+ ║   Every year, qualified candidates get lost in the noise.                ║
+ ║                                                                          ║
+ ║   We didn't build a tool.                                                ║
+ ║   We built a Full AI - powered Applicant Tracking System.                ║
+ ║                                                                          ║
+ ║   H I R E F L O W                                                        ║
+ ║                                                                          ║
  ╚══════════════════════════════════════════════════════════════════════════╝
 ```
 
