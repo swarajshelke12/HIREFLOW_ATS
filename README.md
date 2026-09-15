@@ -64,7 +64,7 @@
 
 <br>
 
-`⚡ Vision` · `🧬 Features` · `🏛 Architecture` · `🛠 Tech Stack` · `🚀 Quick Start` · `📐 Structure` · `🗺 Roadmap` · `💎 Contributing`
+`Vision` · `Features` · `Architecture` · `Tech Stack` · `Quick Start` · `Structure` · `Roadmap` · `Contributing`
 
 <br>
 
@@ -75,12 +75,12 @@
 <br>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--                            VISION FEATURE                               -->
+<!--                            VISION                                     -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
 
-## ⚡ The Vision feature of AI
+## The Vision
 
 <br>
 
@@ -120,15 +120,9 @@ Built with a cinematic **3D interactive portal**, powered by **dual-LLM orchestr
 
 <div align="center">
 
-## 🧬 Features That Define the Future
+## Features
 
 <br>
-
-<i>Each feature was obsessively engineered. Nothing is filler. Everything is intentional.</i>
-
-<br><br>
-
-<!-- Feature Grid -->
 
 <table>
 <tr>
@@ -138,9 +132,9 @@ Built with a cinematic **3D interactive portal**, powered by **dual-LLM orchestr
 
 <img src="https://img.icons8.com/fluency/96/cube.png" width="56" />
 
-### 🌌 3D Immersive Portal
+### 3D Immersive Portal
 
-A jaw-dropping candidate experience built with **Spline 3D**, **Framer Motion**, and cinematic lighting. Not a form — an _experience_.
+A candidate experience built with **Spline 3D**, **Framer Motion**, and cinematic lighting. Not a form — an _experience_.
 
 <br>
 
@@ -151,9 +145,9 @@ A jaw-dropping candidate experience built with **Spline 3D**, **Framer Motion**,
 
 <img src="https://img.icons8.com/fluency/96/brain.png" width="56" />
 
-### 🧠 Dual-LLM Intelligence
+### Dual-LLM Intelligence
 
-**Google Gemini** handles vision & deep analysis. **Groq's Llama 3** delivers lightning inference. Two minds. One verdict.
+**Google Gemini** handles vision & deep analysis. **Groq's Llama 3** delivers lightning inference. Two models. One verdict.
 
 <br>
 
@@ -164,7 +158,7 @@ A jaw-dropping candidate experience built with **Spline 3D**, **Framer Motion**,
 
 <img src="https://img.icons8.com/fluency/96/document.png" width="56" />
 
-### 📄 Universal Resume Parsing
+### Universal Resume Parsing
 
 PDFs parsed natively. Scanned images decoded via **OCR AI agents**. Handwritten? Blurry? Doesn't matter. We read it all.
 
@@ -179,7 +173,7 @@ PDFs parsed natively. Scanned images decoded via **OCR AI agents**. Handwritten?
 
 <img src="https://img.icons8.com/fluency/96/rating.png" width="56" />
 
-### 📊 Contextual Scoring Engine
+### Contextual Scoring Engine
 
 Not keyword matching. **Semantic understanding.** Candidates scored 0-100 on transferable skills, domain alignment, and raw potential.
 
@@ -192,7 +186,7 @@ Not keyword matching. **Semantic understanding.** Candidates scored 0-100 on tra
 
 <img src="https://img.icons8.com/fluency/96/email-open.png" width="56" />
 
-### 💌 Empathetic Feedback Loop
+### Empathetic Feedback Loop
 
 Rejected candidates receive **personalized, constructive emails** citing specific technical gaps. Respectful. Actionable. Human.
 
@@ -205,7 +199,7 @@ Rejected candidates receive **personalized, constructive emails** citing specifi
 
 <img src="https://img.icons8.com/fluency/96/user-shield.png" width="56" />
 
-### 🛡️ Human-in-the-Loop
+### Human-in-the-Loop
 
 AI recommends. **Humans decide.** Integrated approval workflows ensure no critical decision is made without HR oversight.
 
@@ -220,7 +214,7 @@ AI recommends. **Humans decide.** Integrated approval workflows ensure no critic
 
 <img src="https://img.icons8.com/fluency/96/globe.png" width="56" />
 
-### 🌍 Global Smart Validation
+### Global Smart Validation
 
 Dynamic **country-specific phone validation** for 8+ regions. Intelligent file-type detection. Real-time input feedback.
 
@@ -233,7 +227,7 @@ Dynamic **country-specific phone validation** for 8+ regions. Intelligent file-t
 
 <img src="https://img.icons8.com/fluency/96/confetti.png" width="56" />
 
-### 🎊 Celebration UX
+### Celebration UX
 
 Successful submissions trigger a **cinematic confetti explosion**. Because applying for a job should feel like an achievement.
 
@@ -246,7 +240,7 @@ Successful submissions trigger a **cinematic confetti explosion**. Because apply
 
 <img src="https://img.icons8.com/fluency/96/workflow.png" width="56" />
 
-### ⚡ n8n Orchestration
+### n8n Orchestration
 
 Enterprise-grade **workflow automation** with conditional routing, error handling, and seamless third-party integrations.
 
@@ -270,7 +264,7 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
 
 <div align="center">
 
-## 🏛 System Architecture
+## System Architecture
 
 <br>
 
@@ -315,7 +309,7 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
                                                │
                                      ┌─────────▼─────────┐
                                      │                     │
-                                     │   🧠  DUAL  LLM    │
+                                     │   DUAL LLM         │
                                      │   ANALYSIS ENGINE  │
                                      │                     │
                                      │  ┌───────────────┐ │
@@ -335,9 +329,9 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
                                      │                     │
                                      │   DECISION ENGINE  │
                                      │                     │
-                                     │  Score > 80 → 🟢   │
-                                     │  Score < 45 → 🔴   │
-                                     │  45-80      → 🟡   │
+                                     │  Score > 80  --> Interview    │
+                                     │  Score < 45  --> Reject       │
+                                     │  45-80       --> HR Review    │
                                      │                     │
                                      └─────────┬─────────┘
                                                │
@@ -365,13 +359,9 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
 
 <div align="center">
 
-## 🛠 Tech Stack
+## Tech Stack
 
 <br>
-
-<i>Engineered with precision. Every dependency earns its place.</i>
-
-<br><br>
 
 </div>
 
@@ -385,7 +375,7 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
 <tr><td colspan="3"><br></td></tr>
 
 <tr>
-<td align="center"><b>⚡ Framework</b></td>
+<td align="center"><b>Framework</b></td>
 <td align="center">
 <img src="https://skillicons.dev/icons?i=nextjs" width="28" /> Next.js 16
 </td>
@@ -393,7 +383,7 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
 </tr>
 
 <tr>
-<td align="center"><b>🔷 Language</b></td>
+<td align="center"><b>Language</b></td>
 <td align="center">
 <img src="https://skillicons.dev/icons?i=ts" width="28" /> TypeScript
 </td>
@@ -401,7 +391,7 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
 </tr>
 
 <tr>
-<td align="center"><b>🎨 Styling</b></td>
+<td align="center"><b>Styling</b></td>
 <td align="center">
 <img src="https://skillicons.dev/icons?i=tailwind" width="28" /> Tailwind CSS 4
 </td>
@@ -409,7 +399,7 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
 </tr>
 
 <tr>
-<td align="center"><b>✨ Animation</b></td>
+<td align="center"><b>Animation</b></td>
 <td align="center">
 <img src="https://cdn.simpleicons.org/framer/0055FF" width="28" /> Framer Motion
 </td>
@@ -417,7 +407,7 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
 </tr>
 
 <tr>
-<td align="center"><b>🌌 3D Engine</b></td>
+<td align="center"><b>3D Engine</b></td>
 <td align="center">
 <img src="https://cdn.simpleicons.org/threedotjs/ffffff" width="28" /> Spline 3D
 </td>
@@ -425,15 +415,15 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
 </tr>
 
 <tr>
-<td align="center"><b>🎊 Effects</b></td>
-<td align="center">🎆 Canvas Confetti</td>
+<td align="center"><b>Effects</b></td>
+<td align="center">Canvas Confetti</td>
 <td>GPU-accelerated particle system for celebration moments</td>
 </tr>
 
 <tr><td colspan="3"><br></td></tr>
 
 <tr>
-<td align="center"><b>🧠 AI Primary</b></td>
+<td align="center"><b>AI Primary</b></td>
 <td align="center">
 <img src="https://cdn.simpleicons.org/googlegemini/886FBF" width="28" /> Google Gemini 1.5 Pro
 </td>
@@ -441,15 +431,13 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
 </tr>
 
 <tr>
-<td align="center"><b>⚡ AI Secondary</b></td>
-<td align="center">
-🚀 Groq (Llama 3)
-</td>
+<td align="center"><b>AI Secondary</b></td>
+<td align="center">Groq (Llama 3)</td>
 <td>Ultra-low latency inference via Groq's LPU for rapid scoring</td>
 </tr>
 
 <tr>
-<td align="center"><b>🔄 Orchestration</b></td>
+<td align="center"><b>Orchestration</b></td>
 <td align="center">
 <img src="https://cdn.simpleicons.org/n8n/EA4B71" width="28" /> n8n
 </td>
@@ -457,7 +445,7 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
 </tr>
 
 <tr>
-<td align="center"><b>📊 Database</b></td>
+<td align="center"><b>Database</b></td>
 <td align="center">
 <img src="https://cdn.simpleicons.org/googlesheets/34A853" width="28" /> Google Sheets
 </td>
@@ -465,7 +453,7 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
 </tr>
 
 <tr>
-<td align="center"><b>📧 Email</b></td>
+<td align="center"><b>Email</b></td>
 <td align="center">
 <img src="https://cdn.simpleicons.org/gmail/EA4335" width="28" /> Gmail SMTP
 </td>
@@ -486,13 +474,9 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
 
 <div align="center">
 
-## ⚙️ The Workflow — From Upload to Outcome
+## The Workflow — From Upload to Outcome
 
 <br>
-
-<i>Six precise steps. Zero wasted motion. Maximum intelligence.</i>
-
-<br><br>
 
 </div>
 
@@ -511,7 +495,7 @@ Enterprise-grade **workflow automation** with conditional routing, error handlin
 </td>
 <td>
 
-### 🌐 Candidate Arrives
+### Candidate Arrives
 
 The candidate lands on a **3D interactive portal** — not a boring form. Spline renders a living, breathing environment. They enter their details and drag-and-drop their resume.
 
@@ -532,7 +516,7 @@ The candidate lands on a **3D interactive portal** — not a boring form. Spline
 </td>
 <td>
 
-### 🔐 Secure Transmission
+### Secure Transmission
 
 Form data + resume file are packaged into a **multipart FormData** payload and transmitted to a private n8n webhook endpoint over HTTPS. No data touches third-party servers.
 
@@ -553,7 +537,7 @@ Form data + resume file are packaged into a **multipart FormData** payload and t
 </td>
 <td>
 
-### 🔀 Intelligent Router
+### Intelligent Router
 
 The n8n workflow **detects the file type** and routes accordingly — PDFs take the native extraction pathway, while images are routed through the **OCR Vision Agent** powered by Gemini.
 
@@ -574,7 +558,7 @@ The n8n workflow **detects the file type** and routes accordingly — PDFs take 
 </td>
 <td>
 
-### 🧠 Dual-LLM Analysis
+### Dual-LLM Analysis
 
 The extracted text is evaluated against a meticulously crafted **"Talent Scout" system prompt**. The AI doesn't just scan for keywords — it assesses **transferable skills, growth trajectory, domain fit, and latent potential** to generate a holistic 0-100 score.
 
@@ -595,15 +579,15 @@ The extracted text is evaluated against a meticulously crafted **"Talent Scout" 
 </td>
 <td>
 
-### ⚖️ Decision Engine
+### Decision Engine
 
 The score triggers deterministic actions:
 
 |   Score   | Action                               | Status |
 | :-------: | :----------------------------------- | :----: |
-|  `> 80`   | Marked for interview — fast-tracked  |   🟢   |
-| `45 - 80` | Held for manual HR review            |   🟡   |
-|  `< 45`   | Constructive rejection email drafted |   🔴   |
+|  `> 80`   | Marked for interview — fast-tracked  |  Pass  |
+| `45 - 80` | Held for manual HR review            | Review |
+|  `< 45`   | Constructive rejection email drafted | Reject |
 
 </td>
 </tr>
@@ -622,7 +606,7 @@ The score triggers deterministic actions:
 </td>
 <td>
 
-### ✅ Human Gate & Output
+### Human Gate & Output
 
 All data is persisted to **Google Sheets** in real-time. Rejection emails enter an **approval queue** — no email is sent without explicit HR sign-off. The human always has the final word.
 
@@ -642,65 +626,39 @@ All data is persisted to **Google Sheets** in real-time. Rejection emails enter 
 
 <div align="center">
 
-## 🚀 Quick Start
+## Quick Start
 
 <br>
-
-<i>From zero to running in under 60 seconds.</i>
-
-<br><br>
 
 </div>
 
 ### Prerequisites
 
-<table>
-<tr>
-<td width="60" align="center">📦</td>
-<td><b>Node.js</b> 18+ installed</td>
-</tr>
-<tr>
-<td align="center">🔧</td>
-<td><b>Git</b> installed and configured</td>
-</tr>
-<tr>
-<td align="center">⚡</td>
-<td><b>n8n</b> instance running (for webhook automation)</td>
-</tr>
-</table>
+- **Node.js** 18+
+- **Git** installed and configured
+- **n8n** instance running (for webhook automation)
 
 <br>
 
 ### Installation
 
 ```bash
-# ── Clone the repository ──────────────────────────────────────────────
 git clone https://github.com/swarajshelke12/HIREFLOW_ATS.git
-
-# ── Navigate into the project ─────────────────────────────────────────
 cd HIREFLOW_ATS
-
-# ── Install dependencies ──────────────────────────────────────────────
 npm install
 ```
 
 ### Launch
 
 ```bash
-# ── Start the development server ──────────────────────────────────────
 npm run dev
-
-# ── Open in your browser ─────────────────────────────────────────────
-# → http://localhost:3000
+# Open http://localhost:3000
 ```
 
 ### Build for Production
 
 ```bash
-# ── Create optimized production build ─────────────────────────────────
 npm run build
-
-# ── Start production server ───────────────────────────────────────────
 npm start
 ```
 
@@ -708,7 +666,7 @@ npm start
 
 <div align="center">
 
-### ☁️ One-Click Deploy
+### One-Click Deploy
 
 <br>
 
@@ -728,40 +686,35 @@ npm start
 
 <div align="center">
 
-## 📐 Project Structure
+## Project Structure
 
 <br>
-
-<i>Clean. Modular. Intentional. Every file has a purpose.</i>
-
-<br><br>
 
 </div>
 
 ```
 HIREFLOW/
 │
-├── 📁 app/                          # Next.js App Router
-│   ├── 📄 page.tsx                  # ✦ Main candidate portal — 3D form experience
-│   ├── 📄 layout.tsx                # ✦ Root layout with metadata & font config
-│   └── 🎨 globals.css               # ✦ Global styles & Tailwind directives
+├── app/                          # Next.js App Router
+│   ├── page.tsx                  # Main candidate portal — 3D form experience
+│   ├── layout.tsx                # Root layout with metadata & font config
+│   └── globals.css               # Global styles & Tailwind directives
 │
-├── 📁 components/
-│   └── 📁 ui/
-│       ├── 📄 card.tsx              # ✦ Glassmorphic card component
-│       ├── 📄 spline.tsx            # ✦ Spline 3D scene loader
-│       └── 📄 spotlight.tsx         # ✦ Dynamic spotlight effect
+├── components/
+│   └── ui/
+│       ├── card.tsx              # Glassmorphic card component
+│       ├── spline.tsx            # Spline 3D scene loader
+│       └── spotlight.tsx         # Dynamic spotlight effect
 │
-├── 📁 lib/
-│   └── 📄 utils.ts                  # ✦ Utility functions (cn, classnames)
+├── lib/
+│   └── utils.ts                  # Utility functions (cn, classnames)
 │
-├── 📁 public/                       # Static assets
+├── public/                       # Static assets
 │
-├── ⚙️ next.config.ts                # Next.js configuration
-├── ⚙️ tsconfig.json                 # TypeScript compiler options
-├── ⚙️ postcss.config.mjs            # PostCSS + Tailwind pipeline
-├── 📦 package.json                  # Dependencies & scripts
-└── 📄 README.md                     # ← You are here ✨
+├── next.config.ts                # Next.js configuration
+├── tsconfig.json                 # TypeScript compiler options
+├── postcss.config.mjs            # PostCSS + Tailwind pipeline
+└── package.json                  # Dependencies & scripts
 ```
 
 <br>
@@ -776,14 +729,14 @@ HIREFLOW/
 
 <div align="center">
 
-## 🔬 Deep Dive — Key Systems
+## Deep Dive — Key Systems
 
 <br>
 
 </div>
 
 <details>
-<summary><b>&nbsp;🧠&nbsp; The AI Scoring Algorithm</b></summary>
+<summary><b>&nbsp; The AI Scoring Algorithm</b></summary>
 
 <br>
 
@@ -805,19 +758,19 @@ The **"Talent Scout" system prompt** instructs the LLM to act as a senior recrui
 
 **Score Ranges:**
 
-| Range  |     Label      | Action                         |
-| :----: | :------------: | :----------------------------- |
-| 80-100 | 🏆 Exceptional | Immediate interview fast-track |
-| 60-79  |   ⭐ Strong    | Flagged for priority review    |
-| 45-59  |  💡 Promising  | Manual HR evaluation required  |
-|  0-44  |  📝 Below Bar  | Constructive feedback email    |
+| Range  | Label       | Action                         |
+| :----: | :---------: | :----------------------------- |
+| 80-100 | Exceptional | Immediate interview fast-track |
+| 60-79  | Strong      | Flagged for priority review    |
+| 45-59  | Promising   | Manual HR evaluation required  |
+|  0-44  | Below Bar   | Constructive feedback email    |
 
 </details>
 
 <br>
 
 <details>
-<summary><b>&nbsp;🌐&nbsp; Smart Phone Validation System</b></summary>
+<summary><b>&nbsp; Smart Phone Validation System</b></summary>
 
 <br>
 
@@ -825,30 +778,30 @@ HireFlow implements **country-aware phone validation** supporting 8+ regions wit
 
 ```typescript
 const COUNTRY_CONFIG = [
-  { code: "+91", label: "IN (+91)", maxLength: 10 }, // India
-  { code: "+1", label: "US/CA (+1)", maxLength: 10 }, // North America
-  { code: "+44", label: "UK (+44)", maxLength: 10 }, // United Kingdom
-  { code: "+61", label: "AU (+61)", maxLength: 9 }, // Australia
+  { code: "+91", label: "IN (+91)", maxLength: 10 },   // India
+  { code: "+1",  label: "US/CA (+1)", maxLength: 10 }, // North America
+  { code: "+44", label: "UK (+44)", maxLength: 10 },   // United Kingdom
+  { code: "+61", label: "AU (+61)", maxLength: 9 },    // Australia
   { code: "+971", label: "UAE (+971)", maxLength: 9 }, // UAE
-  { code: "+49", label: "DE (+49)", maxLength: 11 }, // Germany
-  { code: "+33", label: "FR (+33)", maxLength: 9 }, // France
-  { code: "+81", label: "JP (+81)", maxLength: 10 }, // Japan
+  { code: "+49", label: "DE (+49)", maxLength: 11 },   // Germany
+  { code: "+33", label: "FR (+33)", maxLength: 9 },    // France
+  { code: "+81", label: "JP (+81)", maxLength: 10 },   // Japan
 ];
 ```
 
 The input dynamically adapts:
 
-- ✅ Placeholder text changes per country
-- ✅ Max digit limit enforced in real-time
-- ✅ Non-numeric characters blocked at input level
-- ✅ Phone field resets on country change
+- Placeholder text changes per country
+- Max digit limit enforced in real-time
+- Non-numeric characters blocked at input level
+- Phone field resets on country change
 
 </details>
 
 <br>
 
 <details>
-<summary><b>&nbsp;📄&nbsp; Universal Resume Parser</b></summary>
+<summary><b>&nbsp; Universal Resume Parser</b></summary>
 
 <br>
 
@@ -866,31 +819,31 @@ The input dynamically adapts:
               ┌─────────▼───┐ ┌───▼─────────┐
               │  PDF Engine │ │ OCR Engine  │
               │             │ │             │
-              │  • Native   │ │ • Gemini    │
+              │  · Native   │ │ · Gemini    │
               │    extract  │ │   Vision    │
-              │  • Max 5MB  │ │ • Max 1MB   │
-              │  • Instant  │ │ • AI-based  │
+              │  · Max 5MB  │ │ · Max 1MB   │
+              │  · Instant  │ │ · AI-based  │
               └─────────┬───┘ └───┬─────────┘
                         │         │
                     ┌───▼─────────▼───┐
                     │  Unified Text   │
-                    │  → LLM Scoring  │
+                    │  --> LLM Scoring  │
                     └─────────────────┘
 ```
 
 **Supported Formats:**
 
-- 📑 PDF documents (up to 5MB)
-- 🖼️ JPG/JPEG images (up to 1MB)
-- 🖼️ PNG images (up to 1MB)
-- 📷 Scanned documents (via OCR)
+- PDF documents (up to 5MB)
+- JPG/JPEG images (up to 1MB)
+- PNG images (up to 1MB)
+- Scanned documents (via OCR)
 
 </details>
 
 <br>
 
 <details>
-<summary><b>&nbsp;🎨&nbsp; The 3D Experience Layer</b></summary>
+<summary><b>&nbsp; The 3D Experience Layer</b></summary>
 
 <br>
 
@@ -916,89 +869,25 @@ The Spline scene loads asynchronously and renders at **60fps** using hardware-ac
 <br>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--                        PERFORMANCE                                    -->
+<!--                        CUSTOMIZATION                                  -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
 
-## ⚡ Performance
-
-<br>
-
-<table>
-<tr>
-<td align="center" width="200">
-
-### 🏎️
-
-**< 2s**
-
-First Contentful Paint
-
-</td>
-<td align="center" width="200">
-
-### 🧠
-
-**< 30s**
-
-AI Resume Analysis
-
-</td>
-<td align="center" width="200">
-
-### 📊
-
-**0-100**
-
-Scoring Precision
-
-</td>
-<td align="center" width="200">
-
-### 🔄
-
-**Real-time**
-
-Data Sync
-
-</td>
-</tr>
-</table>
-
-</div>
-
-<br>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<br>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--                          CUSTOMIZATION                                -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-
-## 🎨 Customization
+## Customization
 
 <br>
 
 </div>
 
 <details>
-<summary><b>&nbsp;🖌️&nbsp; Branding & Theming</b></summary>
+<summary><b>&nbsp; Branding & Theming</b></summary>
 
 <br>
 
 ```bash
-# ── Update global styles ──────────────────────────────────────────────
 app/globals.css          # Colors, fonts, base styles
-
-# ── Modify logo & assets ─────────────────────────────────────────────
 public/                  # Static assets directory
-
-# ── Adjust 3D scene ──────────────────────────────────────────────────
 components/ui/spline.tsx # Spline scene URL
 ```
 
@@ -1007,7 +896,7 @@ components/ui/spline.tsx # Spline scene URL
 <br>
 
 <details>
-<summary><b>&nbsp;🤖&nbsp; AI Configuration</b></summary>
+<summary><b>&nbsp; AI Configuration</b></summary>
 
 <br>
 
@@ -1023,26 +912,26 @@ components/ui/spline.tsx # Spline scene URL
 <br>
 
 <details>
-<summary><b>&nbsp;🔧&nbsp; Troubleshooting</b></summary>
+<summary><b>&nbsp; Troubleshooting</b></summary>
 
 <br>
 
 ```bash
-# ── Build check ───────────────────────────────────────────────────────
+# Build check
 npm run build
 
-# ── Clear cache & restart ────────────────────────────────────────────
+# Clear cache & restart
 npm run dev -- --force
 
-# ── PDF parsing issues ───────────────────────────────────────────────
+# PDF parsing issues
 npm install pdfjs-dist
 
-# ── n8n connection issues ────────────────────────────────────────────
+# n8n connection issues
 # Ensure n8n is running and webhook URL is correct in page.tsx
 # Default: http://localhost:5678/webhook-test/hireflow-apply
 ```
 
-> 💡 **Pro Tip:** Use environment variables in `.env.local` for webhook URLs and API keys to keep sensitive data out of source control.
+> **Tip:** Use environment variables in `.env.local` for webhook URLs and API keys to keep sensitive data out of source control.
 
 </details>
 
@@ -1058,28 +947,24 @@ npm install pdfjs-dist
 
 <div align="center">
 
-## 🗺 Roadmap
+## Roadmap
 
 <br>
-
-<i>Where we are. Where we're going. What's next.</i>
-
-<br><br>
 
 </div>
 
 ```
    COMPLETED                     IN PROGRESS                    PLANNED
-   ─────────                     ───────────                    ───────
+   ---------                     -----------                    -------
 
-   ✅ 3D Candidate Portal        🔄 Multi-role Support          📋 Dashboard Analytics
-   ✅ Dual-LLM Scoring           🔄 PostgreSQL Migration        📋 Candidate CRM
-   ✅ OCR Resume Parsing          🔄 Rate Limiting               📋 Interview Scheduler
-   ✅ Smart Phone Validation                                     📋 Slack/Teams Integration
-   ✅ Empathetic Email Loop                                      📋 Custom Scoring Rubrics
-   ✅ Human Approval Gate                                        📋 Multi-language Support
-   ✅ Confetti Celebration                                       📋 API for External ATS
-   ✅ n8n Orchestration                                          📋 Mobile App (React Native)
+   [x] 3D Candidate Portal        [ ] Multi-role Support         [ ] Dashboard Analytics
+   [x] Dual-LLM Scoring           [ ] PostgreSQL Migration        [ ] Candidate CRM
+   [x] OCR Resume Parsing         [ ] Rate Limiting               [ ] Interview Scheduler
+   [x] Smart Phone Validation                                     [ ] Slack/Teams Integration
+   [x] Empathetic Email Loop                                      [ ] Custom Scoring Rubrics
+   [x] Human Approval Gate                                        [ ] Multi-language Support
+   [x] Confetti Celebration                                       [ ] API for External ATS
+   [x] n8n Orchestration                                          [ ] Mobile App (React Native)
 ```
 
 <br>
@@ -1094,42 +979,38 @@ npm install pdfjs-dist
 
 <div align="center">
 
-## 💎 Contributing
+## Contributing
 
 <br>
-
-<i>Great software is never built alone.</i>
-
-<br><br>
 
 <table>
 <tr>
 <td width="600">
 
-We welcome contributions from developers, designers, and dreamers who share our vision of making hiring **intelligent, fair, and human.**
+We welcome contributions from developers, designers, and anyone who shares the goal of making hiring **intelligent, fair, and human.**
 
 **How to contribute:**
 
 ```bash
 # 1. Fork the repository
 # 2. Create your feature branch
-git checkout -b feature/something-amazing
+git checkout -b feature/your-feature
 
 # 3. Commit your changes
-git commit -m "feat: add something amazing"
+git commit -m "feat: add your feature"
 
 # 4. Push to your branch
-git push origin feature/something-amazing
+git push origin feature/your-feature
 
 # 5. Open a Pull Request
 ```
 
 **Guidelines:**
 
-- 🎯 Follow the existing code style (TypeScript strict mode)
-- 📝 Write meaningful commit messages
-- 🧪 Test your changes before submitting
-- 📖 Update documentation for new features
+- Follow the existing code style (TypeScript strict mode)
+- Write meaningful commit messages
+- Test your changes before submitting
+- Update documentation for new features
 
 </td>
 </tr>
@@ -1149,7 +1030,7 @@ git push origin feature/something-amazing
 
 <div align="center">
 
-## 👤 Creator
+## Creator
 
 <br>
 
@@ -1196,7 +1077,7 @@ _and candidates are treated like tickets, not people."_
 
 <div align="center">
 
-## 📜 License
+## License
 
 <br>
 
@@ -1234,14 +1115,14 @@ See the [LICENSE](LICENSE) file for details.
 
 <br>
 
-**If HireFlow resonated with you, leave a ⭐**
+**If HireFlow resonated with you, leave a star.**
 
 _It means more than you think._
 
 <br>
 
 <a href="#top">
-  <img src="https://img.shields.io/badge/↑_Back_to_Top-0d1117?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Back_to_Top-0d1117?style=for-the-badge" />
 </a>
 
 <br><br>
