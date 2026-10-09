@@ -1,7 +1,7 @@
 # HIREFLOW ATS - Complete Project Specification & State Index (`build.md`)
 
 > **Single Source of Truth (SSOT)** for AI Agents and Developers.  
-> *Last Updated: March 2026* | *Engine: Next.js 16.1 (Turbopack) & React 19*
+> *Engine: Next.js 16.1.1 (Turbopack) & React 19.2 | Type System: TypeScript 5.x*
 
 ---
 
@@ -15,48 +15,57 @@
 
 ---
 
-## 2. Architecture & Data Flow
+## 2. Architecture & 3-Layer System Design
 
 ```mermaid
 flowchart TD
     A[Candidate Visits Portal] --> B[Spline 3D & Spotlight Canvas Render]
     B --> C[Candidate Fills Form]
     C --> D{Frontend Validation}
-    D -- Invalid Phone/Email/File --> E[Display Error State]
+    D -- Invalid Phone/Email/File --> E[Display Error Alert & Pulse]
     D -- Valid Inputs --> F[Construct Multi-part FormData]
     F --> G[POST to n8n Webhook: /webhook-test/hireflow-apply]
     G --> H{Webhook Response}
     H -- Success --> I[Trigger Confetti Burst + Success View]
-    H -- Network/n8n Down --> J[Show Graceful System Busy Error]
+    H -- Network/n8n Down --> J[Show Graceful System Busy Alert]
 ```
 
-### Component Responsibility Breakdown
+### Complete Repository Map & Responsibilities
 ```
 HIREFLOW Root
 │
 ├── app/
-│   ├── layout.tsx        -> Root HTML shell, Geist Sans/Mono font injection, global metadata
-│   ├── globals.css       -> Tailwind CSS v4 import, custom @theme tokens, dark mode root vars
-│   └── page.tsx          -> CandidatePortal: Main client component handling form state, validation, 3D scene & webhook submission
+│   ├── layout.tsx                     -> Root HTML shell, Geist font variables, ATS metadata & SEO tags
+│   ├── globals.css                    -> Tailwind CSS v4 import, custom @theme tokens, font cascade
+│   └── page.tsx                       -> CandidatePortal: Main client component with validation & 3D scene
 │
 ├── components/
 │   └── ui/
-│       ├── card.tsx      -> Glassmorphic Card, CardHeader, CardContent container wrappers
-│       ├── spline.tsx    -> Lazy-loaded SplineScene with Suspense boundary
-│       └── spotlight.tsx -> High-performance SVG blur spotlight backdrop
+│       ├── card.tsx                   -> Glassmorphic Card, CardHeader, CardContent container wrappers
+│       ├── spline.tsx                 -> Lazy-loaded SplineScene with Suspense boundary
+│       └── spotlight.tsx              -> High-performance SVG blur spotlight backdrop
 │
 ├── lib/
-│   ├── types.ts          -> Strong TypeScript contracts for CountryConfig, FormState, Webhook payloads
-│   └── utils.ts          -> Utility helpers (cn class merging)
+│   ├── types.ts                       -> Strong TypeScript contracts for CountryConfig, FormState, Webhooks
+│   └── utils.ts                       -> Utility helpers (cn class merging with clsx + twMerge)
 │
-├── directives/           -> SOPs and operational guidelines for AI agents
-├── execution/            -> Deterministic scripts and execution tools
-└── next.config.ts        -> Turbopack workspace root resolution & Next.js config
+├── directives/                        -> Layer 1: SOPs & Operational Directives for AI Agents
+│   ├── candidate_intake.md            -> Intake rules, boundary constraints, and error toast behaviors
+│   ├── n8n_webhook_integration.md     -> Webhook contract, downstream AI parser, and retry strategies
+│   └── spline_3d_assets.md            -> Spline WebGL canvas runtime, positioning & fallback guidelines
+│
+├── execution/                         -> Layer 3: Deterministic Execution Scripts
+│   └── validate_inputs.ts             -> Self-testing validation engine verifying phone, email, file limits
+│
+├── .env.example                       -> Environment variable schema template
+├── next.config.ts                     -> Turbopack workspace root resolution & Next.js config
+├── tsconfig.json                      -> TypeScript paths (@/*) and compilation settings
+└── eslint.config.mjs                  -> Next.js 16 core web vitals and TypeScript lint configuration
 ```
 
 ---
 
-## 3. Tech Stack Matrix
+## 3. Tech Stack & Dependency Matrix
 
 | Technology | Version | Purpose |
 | :--- | :--- | :--- |
@@ -96,37 +105,38 @@ The portal implements strict localized phone length validation for 10 target cou
 ### File Upload Constraints
 - **PDF Resumes:** Max allowed size is **5,000,000 bytes (5MB)**. MIME: `application/pdf`.
 - **Image Resumes (OCR):** Max allowed size is **1,000,000 bytes (1MB)**. MIME: `image/jpeg`, `image/png`.
-- **Validation Reaction:** Immediate client-side error toast with human-readable size reporting (e.g. `PDF too large (6.20MB)! Max size is 5MB.`).
+- **Validation Feedback:** Immediate client-side error toast with human-readable size reporting and file badge.
 
 ---
 
-## 5. Backend & Webhook Integration Contract
+## 5. Webhook Integration Contract
 
-- **Endpoint URL:** `http://localhost:5678/webhook-test/hireflow-apply` (configurable for production)
-- **Method:** `POST`
-- **Body Format:** `multipart/form-data`
-- **Fields:**
+- **Endpoint URL:** `process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL || "http://localhost:5678/webhook-test/hireflow-apply"`
+- **HTTP Method:** `POST`
+- **Body Payload (`multipart/form-data`):**
   - `name`: Candidate full name (String)
-  - `phone`: Country code + number (String, e.g. `+91 9876543210`)
+  - `phone`: Country code + phone number (String, e.g. `+91 9876543210`)
   - `email`: Validated email address (String)
-  - `resume`: Binary file stream (`File` object)
+  - `resume`: Binary file payload (`File` object)
 
 ---
 
 ## 6. Ponytail Lean Engineering & Optimization Log
-Based on the Ponytail audit, the following lean architecture principles are enforced:
-1. **Zero Dead Dependencies:** Removed unused `framer-motion` package, cutting down bundle weight and build overhead.
-2. **Regex Simplification:** Removed redundant `\b` inside character classes (`/^[0-9]+$/`) and streamlined email checks.
-3. **No Speculative Abstractions:** Kept single-purpose helper components straightforward without multi-layer boilerplate.
-4. **Clean Next.js 16 Config:** Configured workspace root resolution to avoid Turbopack multi-lockfile ambiguity.
-5. **Proper Font Cascading:** Ensured Geist sans/mono fonts properly map to body typography via CSS variable bindings.
+1. **Zero Dead Dependencies:** Removed unused `framer-motion` package from `package.json`, saving build and bundle overhead.
+2. **Regex Simplification:** Cleaned phone regex by removing unused `\b` inside character class (`/^\d*$/`) and streamlined email checks.
+3. **Array Lookup Simplification:** Removed redundant `useMemo` from 10-item static country array.
+4. **Confetti Overhead Elimination:** Replaced 15-line untyped `setInterval` loop with single particle celebration burst.
+5. **SPA Reset Handler:** Added `handleResetForm` on success screen instead of full browser page reload (`window.location.reload()`).
+6. **Accessibility Hardening:** Added explicit `htmlFor`, `id`, `name`, `autoComplete`, and `role="alert"` attributes.
+7. **Clean Next.js Turbopack Config:** Configured explicit Turbopack root in `next.config.ts` to silence multi-lockfile warnings.
+8. **Font Cascade Fix:** Mapped `var(--font-sans)` to `body` in `globals.css` ensuring Geist typography renders properly.
 
 ---
 
 ## 7. AI Agent Operating Guidelines
 
 When entering this repository for future tasks:
-1. **Read `build.md` first:** Contains the latest map of the application, eliminating the need to search every file.
-2. **Preserve Validation Invariants:** Do not weaken the 10-country phone length restrictions or file size limits without explicit request.
+1. **Read `build.md` first:** Contains the complete state and file map of the application.
+2. **Preserve Invariants:** Do not alter the 10-country phone validation rules, file limits, or Webhook contracts without explicit instruction.
 3. **Maintain Visual Fidelity:** Spline 3D canvas and glassmorphic card depth are core design signatures of HireFlow.
-4. **Verify Build:** Always run `npm run build` or `npm run lint` before completing turns.
+4. **Verify Quality:** Always verify `npm run lint` and `npx tsc --noEmit` before finishing any task.
