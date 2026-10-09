@@ -1,14 +1,16 @@
 # HIREFLOW ATS - Complete Project Specification & State Index (`build.md`)
 
 > **Single Source of Truth (SSOT)** for AI Agents and Developers.  
-> *Engine: Next.js 16.1.1 (Turbopack) & React 19.2 | Type System: TypeScript 5.x*
+> *Engine: Next.js 16.1.1 (Turbopack) & React 19.2 | Type System: TypeScript 5.x*  
+> *Last Updated: March 2026 (Glassmorphism & Lucide Icons Integrated)*
 
 ---
 
 ## 1. Executive Summary & Core Mission
 **HIREFLOW** is a state-of-the-art AI-Powered Candidate Intake Portal and Applicant Tracking System (ATS) frontend designed for high-conversion candidate submissions. It integrates:
 - **Interactive 3D Visuals:** Spline 3D real-time canvas backdrop for an immersive experience.
-- **Glassmorphic UI:** Modern dark-mode interface built with Tailwind CSS v4, custom Spotlight lighting, and micro-interactions.
+- **Glassmorphic UI & Motion Design:** Modern dark-mode interface built with Tailwind CSS v4, custom Spotlight lighting, rotating gradient borders (`rotate-gradient`), inner beam rotation animations (`borderBeamRotation`), and backdrop-blur glass styling.
+- **Micro-Interactions & Particle Physics:** Glassmorphism CTA/buttons with hover glows, and `canvas-confetti` celebrations upon successful submission.
 - **Strict Multi-Country Validation:** Specialized phone input supporting top Asian and European employment markets with automatic digit constraint enforcement.
 - **Dual-Mode Resume Ingestion:** Drag-and-drop & native file picker supporting PDF documents (up to 5MB) and OCR-ready images (PNG/JPG up to 1MB).
 - **Automated AI Pipeline Integration:** Seamless `FormData` dispatch to local/remote n8n webhook pipelines triggering Google Gemini extraction and Groq LPU scoring.
@@ -26,7 +28,7 @@ flowchart TD
     D -- Valid Inputs --> F[Construct Multi-part FormData]
     F --> G[POST to n8n Webhook: /webhook-test/hireflow-apply]
     G --> H{Webhook Response}
-    H -- Success --> I[Trigger Confetti Burst + Success View]
+    H -- Success --> I[Trigger Confetti Burst + Success View with Glassmorphism CTA]
     H -- Network/n8n Down --> J[Show Graceful System Busy Alert]
 ```
 
@@ -36,14 +38,16 @@ HIREFLOW Root
 │
 ├── app/
 │   ├── layout.tsx                     -> Root HTML shell, Geist font variables, ATS metadata & SEO tags
-│   ├── globals.css                    -> Tailwind CSS v4 import, custom @theme tokens, font cascade
-│   └── page.tsx                       -> CandidatePortal: Main client component with validation & 3D scene
+│   ├── globals.css                    -> Tailwind CSS v4, tw-animate-css, keyframe animations (rotate-gradient, borderBeamRotation)
+│   └── page.tsx                       -> CandidatePortal: Main client component with validation, 3D scene & glass buttons
 │
 ├── components/
 │   └── ui/
 │       ├── card.tsx                   -> Glassmorphic Card, CardHeader, CardContent container wrappers
 │       ├── spline.tsx                 -> Lazy-loaded SplineScene with Suspense boundary
-│       └── spotlight.tsx              -> High-performance SVG blur spotlight backdrop
+│       ├── spotlight.tsx              -> High-performance SVG blur spotlight backdrop
+│       ├── glassmorphism-cta.tsx      -> Shimmer-bordered pill CTA button with rotating gradient & glow
+│       └── glassmorphism-button.tsx   -> Reusable glassmorphic button for form submit & action triggers
 │
 ├── lib/
 │   ├── types.ts                       -> Strong TypeScript contracts for CountryConfig, FormState, Webhooks
@@ -52,14 +56,17 @@ HIREFLOW Root
 ├── directives/                        -> Layer 1: SOPs & Operational Directives for AI Agents
 │   ├── candidate_intake.md            -> Intake rules, boundary constraints, and error toast behaviors
 │   ├── n8n_webhook_integration.md     -> Webhook contract, downstream AI parser, and retry strategies
-│   └── spline_3d_assets.md            -> Spline WebGL canvas runtime, positioning & fallback guidelines
+│   ├── spline_3d_assets.md            -> Spline WebGL canvas runtime, positioning & fallback guidelines
+│   └── maintain_build_spec.md         -> SOP for auto-updating build.md on every code modification
 │
 ├── execution/                         -> Layer 3: Deterministic Execution Scripts
-│   └── validate_inputs.ts             -> Self-testing validation engine verifying phone, email, file limits
+│   ├── validate_inputs.ts             -> Self-testing validation engine verifying phone, email, file limits
+│   └── verify_build_spec.ts           -> Integrity checker ensuring build.md matches codebase reality
 │
 ├── .env.example                       -> Environment variable schema template
 ├── next.config.ts                     -> Turbopack workspace root resolution & Next.js config
 ├── tsconfig.json                      -> TypeScript paths (@/*) and compilation settings
+├── package.json                       -> Project scripts and dependencies
 └── eslint.config.mjs                  -> Next.js 16 core web vitals and TypeScript lint configuration
 ```
 
@@ -73,6 +80,8 @@ HIREFLOW Root
 | **React** | `19.2.3` | Core UI engine, React 19 concurrent features |
 | **TypeScript** | `5.x` | Strict type safety and schema validation |
 | **Tailwind CSS** | `4.x` | Modern styling engine with native `@theme` directives |
+| **tw-animate-css** | `^1.x` | Extended animation utilities for Tailwind 4 |
+| **lucide-react** | `^1.x` | Modern SVG iconography (`Send`, `RotateCcw`, `Upload`, `FileText`, `WandSparkles`) |
 | **@splinetool/react-spline** | `4.1.0` | Interactive 3D robot/space scene integration |
 | **@splinetool/runtime** | `1.12.28` | WebGL runtime for Spline scenes |
 | **canvas-confetti** | `1.9.4` | Particle celebration physics upon application receipt |
@@ -121,7 +130,18 @@ The portal implements strict localized phone length validation for 10 target cou
 
 ---
 
-## 6. Ponytail Lean Engineering & Optimization Log
+## 6. Glassmorphism Motion Design System
+- **Keyframe Animations:**
+  - `rotate-gradient`: Conic gradient rotation powering shimmer border sweeps.
+  - `borderBeamRotation`: Linear gradient sweep creating specular border highlights.
+- **Components:**
+  - `GlassmorphismCta`: Used on the submission confirmation view for secondary actions.
+  - `GlassmorphismButton`: Standard `<button>` drop-in replacement with disabled states and spinner animation for form submission.
+- **Glass Styling:** Backdrops use `backdrop-blur-sm` / `backdrop-blur-xl` and layered semi-transparent dark fills (`rgba(10, 11, 20, 0.8)`).
+
+---
+
+## 7. Ponytail Lean Engineering & Optimization Log
 1. **Zero Dead Dependencies:** Removed unused `framer-motion` package from `package.json`, saving build and bundle overhead.
 2. **Regex Simplification:** Cleaned phone regex by removing unused `\b` inside character class (`/^\d*$/`) and streamlined email checks.
 3. **Array Lookup Simplification:** Removed redundant `useMemo` from 10-item static country array.
@@ -130,13 +150,15 @@ The portal implements strict localized phone length validation for 10 target cou
 6. **Accessibility Hardening:** Added explicit `htmlFor`, `id`, `name`, `autoComplete`, and `role="alert"` attributes.
 7. **Clean Next.js Turbopack Config:** Configured explicit Turbopack root in `next.config.ts` to silence multi-lockfile warnings.
 8. **Font Cascade Fix:** Mapped `var(--font-sans)` to `body` in `globals.css` ensuring Geist typography renders properly.
+9. **Glassmorphism Integration:** Upgraded UI buttons to animated shimmer glassmorphism without compromising form contracts or responsiveness.
 
 ---
 
-## 7. AI Agent Operating Guidelines
+## 8. AI Agent Operating Guidelines & Auto-Update Protocol
 
-When entering this repository for future tasks:
+When entering this repository for any task:
 1. **Read `build.md` first:** Contains the complete state and file map of the application.
-2. **Preserve Invariants:** Do not alter the 10-country phone validation rules, file limits, or Webhook contracts without explicit instruction.
-3. **Maintain Visual Fidelity:** Spline 3D canvas and glassmorphic card depth are core design signatures of HireFlow.
-4. **Verify Quality:** Always verify `npm run lint` and `npx tsc --noEmit` before finishing any task.
+2. **Mandatory Auto-Update Rule:** Any change to architecture, components, dependencies, styling tokens, or routes MUST be immediately updated in `build.md`.
+3. **Preserve Invariants:** Do not alter the 10-country phone validation rules, file limits, or Webhook contracts without explicit instruction.
+4. **Maintain Visual Fidelity:** Spline 3D canvas, glassmorphic depth, and shimmer borders are core design signatures of HireFlow.
+5. **Verify Quality:** Always verify `npx tsc --noEmit` before finishing any task.
