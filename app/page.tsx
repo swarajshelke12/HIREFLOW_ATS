@@ -281,11 +281,14 @@ export default function CandidatePortal() {
 
               {/* Email Input */}
               <div className="space-y-2">
-                <label className="text-xs font-bold text-gray-1000 uppercase tracking-widest ml-1">
+                <label htmlFor="candidate-email" className="text-xs font-semibold text-gray-300 uppercase tracking-wider ml-1">
                   Email Address
                 </label>
                 <input 
+                  id="candidate-email"
+                  name="email"
                   type="email" 
+                  autoComplete="email"
                   placeholder="you@example.com"
                   className="w-full p-4 rounded-xl bg-black/50 border border-white/10 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-white placeholder:text-gray-600"
                   onChange={(e) => setEmail(e.target.value)}
@@ -295,7 +298,7 @@ export default function CandidatePortal() {
 
               {/* Resume Upload */}
               <div className="space-y-2">
-                <label className="text-xs font-bold text-gray-1000 uppercase tracking-widest ml-1">
+                <label htmlFor="resume-upload" className="text-xs font-semibold text-gray-300 uppercase tracking-wider ml-1">
                   Resume ONLY (PDF/PNG/JPG)
                 </label>
                 
