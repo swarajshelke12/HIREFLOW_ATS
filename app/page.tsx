@@ -235,14 +235,16 @@ export default function CandidatePortal() {
 
               {/* SMART PHONE INPUT */}
               <div className="space-y-2">
-                <label className="text-xs font-bold text-gray-1000 uppercase tracking-widest ml-1">
+                <label htmlFor="candidate-phone" className="text-xs font-semibold text-gray-300 uppercase tracking-wider ml-1">
                   Phone Number
                 </label>
                 <div className="flex gap-2 h-14"> 
                     
-                    {/* Country Code Selector - FIXED WIDTH & NO SHRINK */}
+                    {/* Country Code Selector */}
                     <div className="relative h-full w-[130px] shrink-0">
                         <select 
+                            id="country-code"
+                            aria-label="Country Code"
                             value={countryCode}
                             onChange={(e) => {
                                 setCountryCode(e.target.value);
@@ -261,10 +263,13 @@ export default function CandidatePortal() {
                         </div>
                     </div>
 
-                    {/* Number Input - TAKES REMAINING SPACE */}
+                    {/* Number Input */}
                     <input 
-                        type="text" 
+                        id="candidate-phone"
+                        name="phone"
+                        type="tel" 
                         inputMode="numeric"
+                        autoComplete="tel-national"
                         placeholder={activeCountry.placeholder}
                         maxLength={activeCountry.maxLength}
                         className="flex-1 min-w-0 h-full p-4 rounded-xl bg-black/50 border border-white/10 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-white placeholder:text-gray-600"
