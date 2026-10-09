@@ -1,12 +1,13 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/spotlight";
 import { SplineScene } from "@/components/ui/spline";
 import confetti from "canvas-confetti"; 
+import { CountryConfig } from "@/lib/types";
 
 // 1. Defined strict rules for each country
-const COUNTRY_CONFIG = [
+const COUNTRY_CONFIG: CountryConfig[] = [
   // Asian Countries (Best 5)
   { code: "+91", label: "IN (+91)", maxLength: 10, placeholder: "98765 43210" },
   { code: "+86", label: "CN (+86)", maxLength: 11, placeholder: "139 1234 5678" },
