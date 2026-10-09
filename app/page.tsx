@@ -218,11 +218,14 @@ export default function CandidatePortal() {
               
               {/* Name Input */}
               <div className="space-y-2">
-                <label className="text-xs font-bold text-gray-1000 uppercase tracking-widest ml-1">
+                <label htmlFor="candidate-name" className="text-xs font-semibold text-gray-300 uppercase tracking-wider ml-1">
                   Full Name
                 </label>
                 <input 
+                  id="candidate-name"
+                  name="name"
                   type="text" 
+                  autoComplete="name"
                   placeholder="John Doe"
                   className="w-full p-4 rounded-xl bg-black/50 border border-white/10 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-white placeholder:text-gray-600"
                   onChange={(e) => setName(e.target.value)}
