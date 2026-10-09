@@ -1,12 +1,18 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
+/**
+ * Props for the Spotlight background lighting element
+ */
 type SpotlightProps = {
   className?: string;
   fill?: string;
 };
 
-export const Spotlight = ({ className, fill }: SpotlightProps) => {
+/**
+ * Animated SVG spotlight lighting effect for Hero sections
+ */
+export const Spotlight = ({ className, fill = "white" }: SpotlightProps) => {
   return (
     <svg
       className={cn(
