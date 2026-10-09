@@ -35,9 +35,7 @@ export default function CandidatePortal() {
   const [dragActive, setDragActive] = useState(false); 
 
   // 2. Get the current active country settings
-  const activeCountry = useMemo(() => {
-    return COUNTRY_CONFIG.find(c => c.code === countryCode) || COUNTRY_CONFIG[0];
-  }, [countryCode]);
+  const activeCountry = COUNTRY_CONFIG.find((c) => c.code === countryCode) ?? COUNTRY_CONFIG[0];
 
   const validateEmail = (email: string) => {
     return String(email)
