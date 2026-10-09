@@ -210,7 +210,9 @@ export default function CandidatePortal() {
             <h1 className="text-4xl font-black tracking-tight uppercase text-center">
               Hire<span className="text-blue-500">Flow</span>
             </h1>
-            <p className="text-white-500 font-medium text-center">For "AI & Automation specialist - Learning & Design team" role give your details here!</p>
+            <p className="text-gray-300 text-sm font-medium text-center mt-1">
+              For "AI & Automation specialist - Learning & Design team" role give your details here!
+            </p>
           </CardHeader>
           
           <CardContent>
