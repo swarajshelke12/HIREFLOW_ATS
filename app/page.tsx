@@ -327,10 +327,13 @@ export default function CandidatePortal() {
                     }
                   `}>
                     {file ? (
-                      <div className="flex flex-col items-center gap-2">
+                      <div className="flex flex-col items-center gap-1.5">
                         <span className="text-blue-400 text-4xl">📄</span>
-                        <span className="text-blue-100 font-semibold break-words text-sm">
+                        <span className="text-blue-100 font-semibold break-words text-sm max-w-full truncate px-2">
                           {file.name}
+                        </span>
+                        <span className="text-xs text-blue-300/70 font-mono">
+                          {(file.size / (1024 * 1024)).toFixed(2)} MB
                         </span>
                       </div>
                     ) : (
