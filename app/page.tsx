@@ -44,10 +44,8 @@ export default function CandidatePortal() {
   // 3. Strict Phone Input Handler
   const handlePhoneInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    
-    // Allow empty string (deleting) OR numbers only
-    // AND ensure length doesn't exceed the selected country's limit
-    if (value === "" || (/^[0-9\b]+$/.test(value) && value.length <= activeCountry.maxLength)) {
+    // Allow digits only and constrain to country-specific maximum length
+    if (/^\d*$/.test(value) && value.length <= activeCountry.maxLength) {
       setPhone(value);
     }
   };
