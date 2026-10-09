@@ -191,7 +191,7 @@ export default function CandidatePortal() {
           </div>
           <h1 className="text-5xl font-black mb-4 uppercase tracking-tighter text-white">Application Received</h1>
           <p className="text-gray-300 text-xl max-w-lg">
-              Our HR team is reviewing your profile, and soon you'll hear back from us. Thank you for applying to join HireFlow!
+            Our HR team is reviewing your profile, and soon you&apos;ll hear back from us. Thank you for applying to join HireFlow!
           </p>
           <button 
             onClick={handleResetForm}
@@ -222,7 +222,7 @@ export default function CandidatePortal() {
               Hire<span className="text-blue-500">Flow</span>
             </h1>
             <p className="text-gray-300 text-sm font-medium text-center mt-1">
-              For "AI & Automation specialist - Learning & Design team" role give your details here!
+              For &quot;AI &amp; Automation specialist - Learning &amp; Design team&quot; role give your details here!
             </p>
           </CardHeader>
           
