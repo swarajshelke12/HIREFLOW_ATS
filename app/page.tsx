@@ -37,12 +37,8 @@ export default function CandidatePortal() {
   // 2. Get the current active country settings
   const activeCountry = COUNTRY_CONFIG.find((c) => c.code === countryCode) ?? COUNTRY_CONFIG[0];
 
-  const validateEmail = (email: string) => {
-    return String(email)
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
+  const validateEmail = (emailStr: string): boolean => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailStr.trim());
   };
 
   // 3. Strict Phone Input Handler
