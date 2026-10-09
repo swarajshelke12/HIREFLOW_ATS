@@ -3,6 +3,9 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/spotlight";
 import { SplineScene } from "@/components/ui/spline";
+import GlassmorphismButton from "@/components/ui/glassmorphism-button";
+import GlassmorphismCta from "@/components/ui/glassmorphism-cta";
+import { Send, RotateCcw, Upload, FileText } from "lucide-react";
 import confetti from "canvas-confetti"; 
 import { CountryConfig } from "@/lib/types";
 
@@ -193,12 +196,17 @@ export default function CandidatePortal() {
           <p className="text-gray-300 text-xl max-w-lg">
             Our HR team is reviewing your profile, and soon you&apos;ll hear back from us. Thank you for applying to join HireFlow!
           </p>
-          <button 
-            onClick={handleResetForm}
-            className="mt-8 px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors shadow-lg active:scale-95"
-          >
-            Submit Another Application
-          </button>
+          <div className="mt-8 flex justify-center">
+            <GlassmorphismCta
+              label="Submit Another Application"
+              avatarSrc=""
+              avatarAlt=""
+              shimmerColor="rgba(34,197,94,0.6)"
+              href="#"
+              onClick={handleResetForm}
+              className="shadow-[0_8px_40px_rgba(34,197,94,0.25)] hover:shadow-[0_0_40px_8px_rgba(34,197,94,0.35)]"
+            />
+          </div>
         </div>
       </main>
     );
@@ -240,7 +248,7 @@ export default function CandidatePortal() {
                   type="text" 
                   autoComplete="name"
                   placeholder="John Doe"
-                  className="w-full p-4 rounded-xl bg-black/50 border border-white/10 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-white placeholder:text-gray-600"
+                  className="w-full p-4 rounded-xl bg-black/50 border border-white/10 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-white placeholder:text-gray-600 backdrop-blur-sm hover:border-white/20"
                   onChange={(e) => setName(e.target.value)}
                   value={name}
                 />
@@ -263,7 +271,7 @@ export default function CandidatePortal() {
                                 setCountryCode(e.target.value);
                                 setPhone(""); 
                             }}
-                            className="w-full h-full appearance-none px-4 rounded-xl bg-black/50 border border-white/10 focus:ring-2 focus:ring-blue-500 outline-none text-white cursor-pointer"
+                            className="w-full h-full appearance-none px-4 rounded-xl bg-black/50 border border-white/10 focus:ring-2 focus:ring-blue-500 outline-none text-white cursor-pointer backdrop-blur-sm hover:border-white/20 transition-all"
                         >
                             {COUNTRY_CONFIG.map((country) => (
                                 <option key={country.code} value={country.code} className="bg-black text-white">
@@ -285,7 +293,7 @@ export default function CandidatePortal() {
                         autoComplete="tel-national"
                         placeholder={activeCountry.placeholder}
                         maxLength={activeCountry.maxLength}
-                        className="flex-1 min-w-0 h-full p-4 rounded-xl bg-black/50 border border-white/10 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-white placeholder:text-gray-600"
+                        className="flex-1 min-w-0 h-full p-4 rounded-xl bg-black/50 border border-white/10 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-white placeholder:text-gray-600 backdrop-blur-sm hover:border-white/20"
                         onChange={handlePhoneInput}
                         value={phone}
                     />
@@ -303,7 +311,7 @@ export default function CandidatePortal() {
                   type="email" 
                   autoComplete="email"
                   placeholder="you@example.com"
-                  className="w-full p-4 rounded-xl bg-black/50 border border-white/10 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-white placeholder:text-gray-600"
+                  className="w-full p-4 rounded-xl bg-black/50 border border-white/10 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-white placeholder:text-gray-600 backdrop-blur-sm hover:border-white/20"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                 />
@@ -331,7 +339,7 @@ export default function CandidatePortal() {
                   />
                   
                   <div className={`
-                    w-full p-8 rounded-xl border-2 border-dashed transition-all text-center relative z-10 duration-300
+                    w-full p-8 rounded-xl border-2 border-dashed transition-all text-center relative z-10 duration-300 backdrop-blur-sm
                     ${dragActive 
                       ? "border-blue-500 bg-blue-500/20 scale-[1.02] shadow-[0_0_30px_rgba(59,130,246,0.3)]" 
                       : "bg-black/50 border-white/10 group-hover:border-blue-500/50"
@@ -339,7 +347,7 @@ export default function CandidatePortal() {
                   `}>
                     {file ? (
                       <div className="flex flex-col items-center gap-1.5">
-                        <span className="text-blue-400 text-4xl">📄</span>
+                        <FileText className="w-10 h-10 text-blue-400" strokeWidth={1.5} />
                         <span className="text-blue-100 font-semibold break-words text-sm max-w-full truncate px-2">
                           {file.name}
                         </span>
@@ -349,9 +357,7 @@ export default function CandidatePortal() {
                       </div>
                     ) : (
                       <div className="flex flex-col items-center gap-2">
-                          <span className={`text-4xl transition-colors ${dragActive ? "text-blue-400" : "text-gray-600"}`}>
-                            {dragActive ? "📂" : "☁️"}
-                          </span>
+                          <Upload className={`w-10 h-10 transition-colors ${dragActive ? "text-blue-400" : "text-gray-600"}`} strokeWidth={1.5} />
                         <span className="text-gray-400 text-sm font-medium">
                           {dragActive ? "Drop it here!" : "PDF (max 5MB) or Image (max 1MB)"}
                         </span>
@@ -370,18 +376,25 @@ export default function CandidatePortal() {
                 </div>
               )}
 
-              <button 
-                onClick={handleSubmit} 
+              {/* Glassmorphism Submit Button */}
+              <GlassmorphismButton
+                onClick={handleSubmit}
                 disabled={loading}
-                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-600/50 py-4 rounded-xl font-bold text-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] active:scale-95"
+                shimmerColor="rgba(59,130,246,0.6)"
+                glowColor="rgba(59,130,246,0.4)"
               >
                 {loading ? (
-                  <span className="flex items-center justify-center gap-2">
+                  <>
                     <span className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin"/>
                     Processing...
-                  </span>
-                ) : "Send Application"}
-              </button>
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" strokeWidth={1.5} />
+                    Send Application
+                  </>
+                )}
+              </GlassmorphismButton>
             </div>
           </CardContent>
         </Card>
