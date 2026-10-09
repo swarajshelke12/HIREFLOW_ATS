@@ -132,9 +132,13 @@ export default function CandidatePortal() {
       formData.append("email", email);
       formData.append("resume", file);
 
-      const response = await fetch("http://localhost:5678/webhook-test/hireflow-apply", {
-         method: "POST",
-         body: formData,
+      const webhookUrl =
+        process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL ||
+        "http://localhost:5678/webhook-test/hireflow-apply";
+
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        body: formData,
       });
 
       if (!response.ok) {
