@@ -21,6 +21,8 @@ const COUNTRY_CONFIG: CountryConfig[] = [
   { code: "+34", label: "ES (+34)", maxLength: 9, placeholder: "612 345 678" },
   { code: "+39", label: "IT (+39)", maxLength: 10, placeholder: "312 345 6789" },
   { code: "+31", label: "NL (+31)", maxLength: 9, placeholder: "6 12345678" },
+];
+
 // File constraints
 const MAX_PDF_SIZE = 5_000_000; // 5MB
 const MAX_IMAGE_SIZE = 1_000_000; // 1MB
