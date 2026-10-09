@@ -351,9 +351,12 @@ export default function CandidatePortal() {
               </div>
 
               {error && (
-                <p className="text-red-400 text-sm text-center font-medium animate-pulse">
+                <div 
+                  role="alert" 
+                  className="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm text-center font-medium animate-in fade-in duration-200"
+                >
                   {error}
-                </p>
+                </div>
               )}
 
               <button 
