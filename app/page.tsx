@@ -165,6 +165,15 @@ export default function CandidatePortal() {
     });
   };
 
+  const handleResetForm = () => {
+    setName("");
+    setPhone("");
+    setEmail("");
+    setFile(null);
+    setIsSubmitted(false);
+    setError("");
+  };
+
   if (isSubmitted) {
     return (
       <main className="w-full h-screen bg-black relative flex flex-col items-center justify-center overflow-hidden">
@@ -183,10 +192,10 @@ export default function CandidatePortal() {
               Our HR team is reviewing your profile, and soon you'll hear back from us. Thank you for applying to join HireFlow!
           </p>
           <button 
-            onClick={() => window.location.reload()}
-            className="mt-8 px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors"
+            onClick={handleResetForm}
+            className="mt-8 px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors shadow-lg active:scale-95"
           >
-            Submit Another
+            Submit Another Application
           </button>
         </div>
       </main>
