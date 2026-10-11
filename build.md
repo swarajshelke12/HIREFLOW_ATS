@@ -2,17 +2,18 @@
 
 > **Single Source of Truth (SSOT)** for AI Agents and Developers.  
 > *Engine: Next.js 16.1.1 (Turbopack) & React 19.2 | Type System: TypeScript 5.x*  
-> *Last Updated: March 2026 (Glassmorphism & Lucide Icons Integrated)*
+> *Design System: Obsidian Aerospace Glassmorphism (Tailwind v4 | DESIGN_VARIANCE: 7 | MOTION: 6 | DENSITY: 5)*  
+> *Last Updated: October 2026 (Frontend Taste & Impeccable Design Overhaul Complete)*
 
 ---
 
 ## 1. Executive Summary & Core Mission
-**HIREFLOW** is a state-of-the-art AI-Powered Candidate Intake Portal and Applicant Tracking System (ATS) frontend designed for high-conversion candidate submissions. It integrates:
-- **Interactive 3D Visuals:** Spline 3D real-time canvas backdrop for an immersive experience.
-- **Glassmorphic UI & Motion Design:** Modern dark-mode interface built with Tailwind CSS v4, custom Spotlight lighting, rotating gradient borders (`rotate-gradient`), inner beam rotation animations (`borderBeamRotation`), and backdrop-blur glass styling.
-- **Micro-Interactions & Particle Physics:** Glassmorphism CTA/buttons with hover glows, and `canvas-confetti` celebrations upon successful submission.
-- **Strict Multi-Country Validation:** Specialized phone input supporting top Asian and European employment markets with automatic digit constraint enforcement.
-- **Dual-Mode Resume Ingestion:** Drag-and-drop & native file picker supporting PDF documents (up to 5MB) and OCR-ready images (PNG/JPG up to 1MB).
+**HIREFLOW** is a state-of-the-art AI-Powered Candidate Intake Portal and Applicant Tracking System (ATS) frontend designed for high-conversion candidate submissions. Built with an aerospace obsidian aesthetic, it combines:
+- **Interactive 3D Visuals & Lighting:** Ambient Spline 3D real-time canvas backdrop and SVG Spotlights for cinematic depth.
+- **Dual-Column Aerospace Layout:** 12-column responsive grid pairing an exhaustive **Job Dossier & Pipeline Roadmap** (`lg:col-span-7`) alongside a high-precision **Candidate Intake Console** (`lg:col-span-5`).
+- **Floating Telemetry Navbar:** Fixed glass header featuring real-time pipeline status, E2E encryption badges, and SLA response guarantees.
+- **Tactile Candidate Intake Console:** Live 4-step progress indicator, inline validation indicators, localized 10-country phone length enforcement with live digit counters (`[N/maxLength]`), and interactive drag-drop resume dropzone with file preview & direct removal action.
+- **Post-Submission Confirmation Hub:** Structured application receipt generator (`HF-2026-XXXXX`), copyable tracking code, candidate recap matrix, next-steps roadmap, and particle confetti celebrations.
 - **Automated AI Pipeline Integration:** Seamless `FormData` dispatch to local/remote n8n webhook pipelines triggering Google Gemini extraction and Groq LPU scoring.
 
 ---
@@ -21,15 +22,16 @@
 
 ```mermaid
 flowchart TD
-    A[Candidate Visits Portal] --> B[Spline 3D & Spotlight Canvas Render]
-    B --> C[Candidate Fills Form]
-    C --> D{Frontend Validation}
-    D -- Invalid Phone/Email/File --> E[Display Error Alert & Pulse]
-    D -- Valid Inputs --> F[Construct Multi-part FormData]
-    F --> G[POST to n8n Webhook: /webhook-test/hireflow-apply]
-    G --> H{Webhook Response}
-    H -- Success --> I[Trigger Confetti Burst + Success View with Glassmorphism CTA]
-    H -- Network/n8n Down --> J[Show Graceful System Busy Alert]
+    A[Candidate Visits Portal] --> B[Spline 3D & Ambient Spotlight Canvas Render]
+    B --> C[Candidate Reviews Job Dossier & Pipeline Roadmap]
+    C --> D[Candidate Fills Intake Console with Live Feedback]
+    D --> E{Client-Side Validation Check}
+    E -- Incomplete/Invalid --> F[Display Contextual Inline Warning & Progress Lock]
+    E -- Valid --> G[Construct Multi-part FormData with Telemetry]
+    G --> H[POST to n8n Webhook: /webhook-test/hireflow-apply]
+    H --> I{Webhook Response}
+    I -- Success --> J[Trigger Confetti Burst + ApplicationSuccess View with Tracking ID]
+    I -- Network/n8n Down --> K[Show Graceful System Busy Alert]
 ```
 
 ### Complete Repository Map & Responsibilities
@@ -38,11 +40,15 @@ HIREFLOW Root
 │
 ├── app/
 │   ├── layout.tsx                     -> Root HTML shell, Geist font variables, ATS metadata & SEO tags
-│   ├── globals.css                    -> Tailwind CSS v4, tw-animate-css, keyframe animations (rotate-gradient, borderBeamRotation)
-│   └── page.tsx                       -> CandidatePortal: Main client component with validation, 3D scene & glass buttons
+│   ├── globals.css                    -> Obsidian dark tokens, precision scrollbars, keyframe animations
+│   └── page.tsx                       -> CandidatePortal: Dual-column aerospace layout orchestrating Dossier & Console
 │
 ├── components/
 │   └── ui/
+│       ├── navbar.tsx                 -> Floating glassmorphic header with live telemetry & security badges
+│       ├── job-dossier.tsx            -> Left-column role spec, mission scope, tech stack, and 4-step hiring roadmap
+│       ├── candidate-form.tsx         -> Right-column intake console with live progress bar, phone formatting & dropzone
+│       ├── application-success.tsx    -> Confirmation receipt with tracking reference ID, candidate recap & roadmap
 │       ├── card.tsx                   -> Glassmorphic Card, CardHeader, CardContent container wrappers
 │       ├── spline.tsx                 -> Lazy-loaded SplineScene with Suspense boundary
 │       ├── spotlight.tsx              -> High-performance SVG blur spotlight backdrop
@@ -50,17 +56,18 @@ HIREFLOW Root
 │       └── glassmorphism-button.tsx   -> Reusable glassmorphic button for form submit & action triggers
 │
 ├── lib/
-│   ├── types.ts                       -> Strong TypeScript contracts for CountryConfig, FormState, Webhooks
+│   ├── types.ts                       -> Extended TypeScript contracts (CountryConfig, JobDossier, SubmissionReceipt)
 │   └── utils.ts                       -> Utility helpers (cn class merging with clsx + twMerge)
 │
 ├── directives/                        -> Layer 1: SOPs & Operational Directives for AI Agents
-│   ├── candidate_intake.md            -> Intake rules, boundary constraints, and error toast behaviors
+│   ├── candidate_intake.md            -> Intake rules, boundary constraints, live progress & receipt protocols
+│   ├── design_system.md              -> Aesthetic rules, dial values, palette locks, and component guidelines
 │   ├── n8n_webhook_integration.md     -> Webhook contract, downstream AI parser, and retry strategies
 │   ├── spline_3d_assets.md            -> Spline WebGL canvas runtime, positioning & fallback guidelines
 │   └── maintain_build_spec.md         -> SOP for auto-updating build.md on every code modification
 │
 ├── execution/                         -> Layer 3: Deterministic Execution Scripts
-│   ├── validate_inputs.ts             -> Self-testing validation engine verifying phone, email, file limits
+│   ├── validate_inputs.ts             -> Comprehensive test suite for 10-country phone lengths, email & receipts
 │   └── verify_build_spec.ts           -> Integrity checker ensuring build.md matches codebase reality
 │
 ├── .env.example                       -> Environment variable schema template
@@ -81,7 +88,7 @@ HIREFLOW Root
 | **TypeScript** | `5.x` | Strict type safety and schema validation |
 | **Tailwind CSS** | `4.x` | Modern styling engine with native `@theme` directives |
 | **tw-animate-css** | `^1.x` | Extended animation utilities for Tailwind 4 |
-| **lucide-react** | `^1.x` | Modern SVG iconography (`Send`, `RotateCcw`, `Upload`, `FileText`, `WandSparkles`) |
+| **lucide-react** | `^1.x` | Modern SVG iconography (`Send`, `Upload`, `FileText`, `Check`, `ShieldCheck`, etc.) |
 | **@splinetool/react-spline** | `4.1.0` | Interactive 3D robot/space scene integration |
 | **@splinetool/runtime** | `1.12.28` | WebGL runtime for Spline scenes |
 | **canvas-confetti** | `1.9.4` | Particle celebration physics upon application receipt |
@@ -94,27 +101,27 @@ HIREFLOW Root
 The portal implements strict localized phone length validation for 10 target countries (Top 5 Asian + Top 5 European tech hubs):
 
 ### Asian Markets
-| Country | Code | Label | Max Length | Placeholder Format |
-| :--- | :--- | :--- | :--- | :--- |
-| **India** | `+91` | `IN (+91)` | 10 digits | `98765 43210` |
-| **China** | `+86` | `CN (+86)` | 11 digits | `139 1234 5678` |
-| **Japan** | `+81` | `JP (+81)` | 10 digits | `90 1234 5678` |
-| **Singapore** | `+65` | `SG (+65)` | 8 digits | `8123 4567` |
-| **UAE** | `+971` | `UAE (+971)` | 9 digits | `50 123 4567` |
+| Country | Code | Label | Flag | Max Length | Placeholder Format |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **India** | `+91` | `IN (+91)` | 🇮🇳 | 10 digits | `98765 43210` |
+| **China** | `+86` | `CN (+86)` | 🇨🇳 | 11 digits | `139 1234 5678` |
+| **Japan** | `+81` | `JP (+81)` | 🇯🇵 | 10 digits | `90 1234 5678` |
+| **Singapore** | `+65` | `SG (+65)` | 🇸🇬 | 8 digits | `8123 4567` |
+| **UAE** | `+971` | `UAE (+971)` | 🇦🇪 | 9 digits | `50 123 4567` |
 
 ### European Markets
-| Country | Code | Label | Max Length | Placeholder Format |
-| :--- | :--- | :--- | :--- | :--- |
-| **United Kingdom** | `+44` | `UK (+44)` | 10 digits | `7700 900077` |
-| **Germany** | `+49` | `DE (+49)` | 11 digits | `151 23456789` |
-| **Spain** | `+34` | `ES (+34)` | 9 digits | `612 345 678` |
-| **Italy** | `+39` | `IT (+39)` | 10 digits | `312 345 6789` |
-| **Netherlands** | `+31` | `NL (+31)` | 9 digits | `6 12345678` |
+| Country | Code | Label | Flag | Max Length | Placeholder Format |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **United Kingdom** | `+44` | `UK (+44)` | 🇬🇧 | 10 digits | `7700 900077` |
+| **Germany** | `+49` | `DE (+49)` | 🇩🇪 | 11 digits | `151 23456789` |
+| **Spain** | `+34` | `ES (+34)` | 🇪🇸 | 9 digits | `612 345 678` |
+| **Italy** | `+39` | `IT (+39)` | 🇮🇹 | 10 digits | `312 345 6789` |
+| **Netherlands** | `+31` | `NL (+31)` | 🇳🇱 | 9 digits | `6 12345678` |
 
 ### File Upload Constraints
 - **PDF Resumes:** Max allowed size is **5,000,000 bytes (5MB)**. MIME: `application/pdf`.
 - **Image Resumes (OCR):** Max allowed size is **1,000,000 bytes (1MB)**. MIME: `image/jpeg`, `image/png`.
-- **Validation Feedback:** Immediate client-side error toast with human-readable size reporting and file badge.
+- **Dropzone Feedback:** Live preview badge showing file name, formatted size in MB, and an instant **Remove** button.
 
 ---
 
@@ -123,42 +130,25 @@ The portal implements strict localized phone length validation for 10 target cou
 - **Endpoint URL:** `process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL || "http://localhost:5678/webhook-test/hireflow-apply"`
 - **HTTP Method:** `POST`
 - **Body Payload (`multipart/form-data`):**
-  - `name`: Candidate full name (String)
+  - `name`: Candidate full legal name (String)
   - `phone`: Country code + phone number (String, e.g. `+91 9876543210`)
   - `email`: Validated email address (String)
   - `resume`: Binary file payload (`File` object)
 
 ---
 
-## 6. Glassmorphism Motion Design System
-- **Keyframe Animations:**
-  - `rotate-gradient`: Conic gradient rotation powering shimmer border sweeps.
-  - `borderBeamRotation`: Linear gradient sweep creating specular border highlights.
-- **Components:**
-  - `GlassmorphismCta`: Used on the submission confirmation view for secondary actions.
-  - `GlassmorphismButton`: Standard `<button>` drop-in replacement with disabled states and spinner animation for form submission.
-- **Glass Styling:** Backdrops use `backdrop-blur-sm` / `backdrop-blur-xl` and layered semi-transparent dark fills (`rgba(10, 11, 20, 0.8)`).
+## 6. Design System & Frontend Taste Directives
+- **Palette Lock:** Dark obsidian background (`#07080d`), translucent glass surfaces (`bg-black/40` with `backdrop-blur-xl`), hairline border accents (`border-white/10`), electric blue primary brand focus (`#3b82f6`), and emerald status elements (`#10b981`).
+- **Anti-Slop Directives:** Zero purple gradient clichés. No generic centered hero containers. Rich dual-column balance ensuring both role transparency and frictionless applicant intake.
+- **Micro-Interactions:** Conic shimmer border sweeps, live progress percentage transitions, tactile button active states, and celebratory confetti bursts.
 
 ---
 
-## 7. Ponytail Lean Engineering & Optimization Log
-1. **Zero Dead Dependencies:** Removed unused `framer-motion` package from `package.json`, saving build and bundle overhead.
-2. **Regex Simplification:** Cleaned phone regex by removing unused `\b` inside character class (`/^\d*$/`) and streamlined email checks.
-3. **Array Lookup Simplification:** Removed redundant `useMemo` from 10-item static country array.
-4. **Confetti Overhead Elimination:** Replaced 15-line untyped `setInterval` loop with single particle celebration burst.
-5. **SPA Reset Handler:** Added `handleResetForm` on success screen instead of full browser page reload (`window.location.reload()`).
-6. **Accessibility Hardening:** Added explicit `htmlFor`, `id`, `name`, `autoComplete`, and `role="alert"` attributes.
-7. **Clean Next.js Turbopack Config:** Configured explicit Turbopack root in `next.config.ts` to silence multi-lockfile warnings.
-8. **Font Cascade Fix:** Mapped `var(--font-sans)` to `body` in `globals.css` ensuring Geist typography renders properly.
-9. **Glassmorphism Integration:** Upgraded UI buttons to animated shimmer glassmorphism without compromising form contracts or responsiveness.
-
----
-
-## 8. AI Agent Operating Guidelines & Auto-Update Protocol
-
-When entering this repository for any task:
-1. **Read `build.md` first:** Contains the complete state and file map of the application.
-2. **Mandatory Auto-Update Rule:** Any change to architecture, components, dependencies, styling tokens, or routes MUST be immediately updated in `build.md`.
-3. **Preserve Invariants:** Do not alter the 10-country phone validation rules, file limits, or Webhook contracts without explicit instruction.
-4. **Maintain Visual Fidelity:** Spline 3D canvas, glassmorphic depth, and shimmer borders are core design signatures of HireFlow.
-5. **Verify Quality:** Always verify `npx tsc --noEmit` before finishing any task.
+## 7. Optimization & Verification Log
+1. **Design Read Applied:** Elevated from a bare centered input box into an aerospace-grade candidate intake portal.
+2. **Dual-Column Architecture:** Integrated `JobDossier` and `CandidateForm` side-by-side with sticky positioning on desktop and clean mobile stacking.
+3. **Telemetry & Trust:** Added floating `Navbar` with live pipeline status, encryption assurances, and 48-hour response SLA.
+4. **Enhanced Feedback:** Added 4-step progress calculation, live digit counters, and single-click resume discard action.
+5. **Tracking Receipt:** Generated unique candidate reference codes with one-click clipboard copy.
+6. **Deterministic Verification:** 18 validation assertions and build specification verification scripts passing with 0 warnings.
+7. **Type Safety:** 100% strict TypeScript compilation with `npx tsc --noEmit`.
