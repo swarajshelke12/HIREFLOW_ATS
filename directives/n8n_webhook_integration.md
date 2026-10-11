@@ -1,7 +1,7 @@
 # SOP: n8n Webhook & AI Pipeline Integration
 
 ## 1. Webhook Configuration
-- **Default Endpoint:** `http://localhost:5678/webhook-test/hireflow-apply`
+- **Default Endpoint:** `https://overtensely-polygynous-emilee.ngrok-free.dev/webhook-test/hireflow-apply`
 - **Configurable Via:** `NEXT_PUBLIC_N8N_WEBHOOK_URL` in `.env.local`
 - **HTTP Method:** `POST`
 
