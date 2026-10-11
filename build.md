@@ -52,6 +52,9 @@ HIREFLOW Root
 │   ├── validate_inputs.ts             -> Test suite for 10-country phone lengths, email & receipts
 │   └── verify_build_spec.ts           -> Integrity checker ensuring build.md matches codebase reality
 │
+├── workflows/                         -> Team Automation Workflows
+│   └── HIREFLOW_ATS.json              -> Master n8n workflow export (32 nodes) for resume intake & AI review
+│
 ├── .env.example                       -> Environment variable schema template
 ├── next.config.ts                     -> Turbopack workspace root resolution & Next.js config
 ├── tsconfig.json                      -> TypeScript paths (@/*) and compilation settings
@@ -94,7 +97,8 @@ HIREFLOW Root
 
 ---
 
-## 5. Webhook Integration Contract
+## 5. Webhook Integration Contract & Workflow
+- **Workflow Template File:** `workflows/HIREFLOW_ATS.json` (Import directly via n8n: *Workflows -> Import from File*)
 - **Endpoint URL:** `process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL || "https://overtensely-polygynous-emilee.ngrok-free.dev/webhook-test/hireflow-apply"`
 - **HTTP Method:** `POST`
 - **Body Payload (`multipart/form-data`):**
@@ -102,6 +106,7 @@ HIREFLOW Root
   - `phone`: Country code + phone number (String, e.g. `+91 9876543210`)
   - `email`: Validated email address (String)
   - `resume`: Binary file payload (`File` object)
+- **Downstream Operations:** Google Drive upload -> Dual OCR (PDF text extractor / Gemini Vision) -> Groq LLM scoring (`openai/gpt-oss-20b`) -> Google Sheets categorizer ("All", "Interview", "Review", "Reject") -> Automated Gmail confirmations & human-in-the-loop review approvals.
 
 ---
 
@@ -113,3 +118,5 @@ HIREFLOW Root
 5. **Dropped Unused Dependency:** Uninstalled `tw-animate-css` in favor of native Tailwind CSS v4 keyframes.
 6. **Deleted Redundant Directories:** Removed duplicate `.claude/` and `agent/` directories generated during skills addition.
 7. **Unified Country Config:** `execution/validate_inputs.ts` now reuses `COUNTRY_CONFIG` directly from `candidate-form.tsx`.
+8. **Master n8n Workflow Export:** Added `workflows/HIREFLOW_ATS.json` containing the full 32-node intake, dual OCR, Groq LLM evaluation, Google Drive/Sheets integration, and Gmail notification pipeline for team import.
+
