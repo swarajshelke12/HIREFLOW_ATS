@@ -349,7 +349,8 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Recommendation:": "displayName": "Recommendation:",
+              "id": "Recommendation:",
+              "displayName": "Recommendation:",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -357,7 +358,8 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Insights:": "displayName": "Insights:",
+              "id": "Insights:",
+              "displayName": "Insights:",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -441,7 +443,8 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Recommendation:": "displayName": "Recommendation:",
+              "id": "Recommendation:",
+              "displayName": "Recommendation:",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -449,7 +452,8 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Insights:": "displayName": "Insights:",
+              "id": "Insights:",
+              "displayName": "Insights:",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -792,7 +796,8 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Hiring_Score:": "displayName": "Hiring_Score:",
+              "id": "Hiring_Score:",
+              "displayName": "Hiring_Score:",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -800,7 +805,8 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Recommendation:": "displayName": "Recommendation:",
+              "id": "Recommendation:",
+              "displayName": "Recommendation:",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -808,7 +814,8 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Insights:": "displayName": "Insights:",
+              "id": "Insights:",
+              "displayName": "Insights:",
               "required": false,
               "defaultMatch": false,
               "display": true,

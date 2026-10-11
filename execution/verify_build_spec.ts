@@ -31,6 +31,7 @@ const CRITICAL_FILES = [
   "execution/verify_build_spec.ts",
   "package.json",
   "tsconfig.json",
+  "workflows/HIREFLOW_ATS.json",
 ];
 
 function verifyBuildSpec() {
