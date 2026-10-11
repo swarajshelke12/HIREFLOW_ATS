@@ -110,7 +110,7 @@ export function CandidateForm({ onSuccess }: CandidateFormProps) {
 
       const webhookUrl =
         process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL ||
-        "http://localhost:5678/webhook-test/hireflow-apply";
+        "https://overtensely-polygynous-emilee.ngrok-free.dev/webhook-test/hireflow-apply";
 
       const response = await fetch(webhookUrl, {
         method: "POST",

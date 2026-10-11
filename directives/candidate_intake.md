@@ -11,5 +11,6 @@ Provide a fast, distraction-free, high-converting public application form for ca
 - **Simplicity:** Zero backend architecture or internal workflow jargon on public-facing forms.
 
 ## 3. Webhook Dispatch Protocol
+- Default Target Endpoint: `https://overtensely-polygynous-emilee.ngrok-free.dev/webhook-test/hireflow-apply` (configurable via `NEXT_PUBLIC_N8N_WEBHOOK_URL`).
 - Transmit payload via `multipart/form-data`: `name`, `phone`, `email`, `resume`.
 - On success: render `ApplicationSuccess` receipt with reference code (`HF-[A-Z0-9]{5}`) and celebratory confetti burst.

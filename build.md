@@ -94,10 +94,22 @@ HIREFLOW Root
 
 ---
 
-## 5. Ponytail Lean Engineering & Optimization Log
-1. **Removed Technical Jargon:** Stripped backend pipeline details, tech stack badges, and internal telemetry from the public form.
-2. **Removed Dead Code:** Deleted unused `components/ui/card.tsx` and unused `JobDossier` component.
-3. **Trimmed Types:** Removed 4 speculative unused TypeScript interfaces from `lib/types.ts`.
-4. **Dropped Unused Dependency:** Uninstalled `tw-animate-css` in favor of native Tailwind CSS v4 keyframes.
-5. **Deleted Redundant Directories:** Removed duplicate `.claude/` and `agent/` directories generated during skills addition.
-6. **Unified Country Config:** `execution/validate_inputs.ts` now reuses `COUNTRY_CONFIG` directly from `candidate-form.tsx`.
+## 5. Webhook Integration Contract
+- **Endpoint URL:** `process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL || "https://overtensely-polygynous-emilee.ngrok-free.dev/webhook-test/hireflow-apply"`
+- **HTTP Method:** `POST`
+- **Body Payload (`multipart/form-data`):**
+  - `name`: Candidate full legal name (String)
+  - `phone`: Country code + phone number (String, e.g. `+91 9876543210`)
+  - `email`: Validated email address (String)
+  - `resume`: Binary file payload (`File` object)
+
+---
+
+## 6. Ponytail Lean Engineering & Optimization Log
+1. **Default Webhook Config:** Configured `https://overtensely-polygynous-emilee.ngrok-free.dev/webhook-test/hireflow-apply` as the primary default endpoint across form, `.env.example`, and `.env.local`.
+2. **Removed Technical Jargon:** Stripped backend pipeline details, tech stack badges, and internal telemetry from the public form.
+3. **Removed Dead Code:** Deleted unused `components/ui/card.tsx` and unused `JobDossier` component.
+4. **Trimmed Types:** Removed 4 speculative unused TypeScript interfaces from `lib/types.ts`.
+5. **Dropped Unused Dependency:** Uninstalled `tw-animate-css` in favor of native Tailwind CSS v4 keyframes.
+6. **Deleted Redundant Directories:** Removed duplicate `.claude/` and `agent/` directories generated during skills addition.
+7. **Unified Country Config:** `execution/validate_inputs.ts` now reuses `COUNTRY_CONFIG` directly from `candidate-form.tsx`.
